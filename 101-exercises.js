@@ -1087,8 +1087,6 @@ function hasEvens(numbers) {
   for (var i = 0; i < numbers.length; i++) {
     if (numbers[i] % 2 === 0) {
       return true;
-    } else {
-      continue;
     }
   }
   return false;
@@ -1103,14 +1101,15 @@ addToDone("Exercise 71 is correct.");
 
 // Exercise 72
 // Write a function definition named countEvens that takes in sequence of numbers and returns the number of even numbers
-// function countEvens(numbers) {
-//   var count = 0;
-//   for (var i = 0; i < numbers.length; i++) {
-//     while (numbers[i] % 2 === 0) {
-//       count = count + 1;
-//     }
-//   }
-// }
+function countEvens(numbers) {
+  var count = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      count += 1;
+    }
+  }
+  return count;
+}
 assert(countEvens([1, 2, 3]), 1, "Exercise 72");
 assert(countEvens([2, 5, 6]), 2, "Exercise 72");
 assert(countEvens([3, 3, 3]), 0, "Exercise 72");
@@ -1120,7 +1119,14 @@ addToDone("Exercise 72 is correct.")
 
 // Exercise 73
 // Write a function definition named hasOdds that takes in sequence of numbers and returns true if there are any odd numbers in the sequence
-
+function hasOdds(numbers) {
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 !== 0) {
+      return true;
+    }
+  }
+  return false;
+}
 assert(hasOdds([1, 2, 3]), true, "Exercise 73");
 assert(hasOdds([2, 5, 6]), true, "Exercise 73");
 assert(hasOdds([3, 3, 3]), true, "Exercise 73");
@@ -1130,7 +1136,15 @@ addToDone("Exercise 73 is correct.")
 
 // Exercise 74
 // Write a function definition named countOdds that takes in sequence of numbers and returns a count of the any odd numbers in the sequence
-
+function countOdds(numbers) {
+  var count = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    if ( numbers[i] % 2 !== 0) {
+      count += 1; 
+    }
+  }
+  return count;
+}
 assert(countOdds([1, 2, 3]), 2, "Exercise 74");
 assert(countOdds([2, 5, 6]), 1, "Exercise 74");
 assert(countOdds([3, 3, 3]), 3, "Exercise 74");
@@ -1140,7 +1154,15 @@ addToDone("Exercise 74 is correct.")
 
 // Exercise 75
 // Write a function definition named countNegatives that takes in sequence of numbers and returns a count of the number of negative numbers
-
+function countNegatives(numbers) {
+  var count = 0;
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] < 0) {
+      count += 1;
+    }
+  }
+  return count;
+}
 assert(countNegatives([1, -2, 3]), 1, "Exercise 75");
 assert(countNegatives([2, -5, -6]), 2, "Exercise 75");
 assert(countNegatives([3, 3, 3]), 0, "Exercise 75");
@@ -1149,7 +1171,15 @@ addToDone("Exercise 75 is correct.")
 
 // Exercise 76
 // Write a function definition named countPositives that takes in sequence of numbers and returns a count of the number of positive numbers
-
+function countPositives(numbers) {
+  var count = 0;
+  for (var i = 0; i <numbers.length; i++) {
+    if (numbers[i] > 0) {
+      count += 1;
+    }
+  }
+  return count;
+}
 assert(countPositives([1, -2, 3]), 2, "Exercise 76");
 assert(countPositives([2, -5, -6]), 1, "Exercise 76");
 assert(countPositives([3, 3, 3]), 3, "Exercise 76");
@@ -1159,7 +1189,16 @@ addToDone("Exercise 76 is correct.")
 
 // Exercise 77
 // Write a function definition named onlyPositiveEvens that takes in sequence of numbers and returns an array containing all the positive evens from the sequence
-
+// function onlyPositiveEvens(numbers) {
+//   var positiveEvens = new Array();
+//   for (var i = 0; i < numbers.length; i++) {
+//     while (numbers[i] <= 0 || numbers[i] % 2 !== 0) {
+//       console.log(numbers[i]);
+//       numbers.splice(i, 1);
+//     }
+//   }
+//   return numbers;
+// }
 assert(onlyPositiveEvens([1, -2, 3]), [], "Exercise 77");
 assert(onlyPositiveEvens([2, -5, -6]), [2], "Exercise 77");
 assert(onlyPositiveEvens([3, 3, 4, 6]), [4, 6], "Exercise 77");
