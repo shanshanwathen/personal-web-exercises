@@ -1234,6 +1234,15 @@ function onlyPositiveEvens(numbers) {
   }
   return positiveEvens;
 }
+
+// function onlyPositiveEvens(numbers) {
+//   for (var i = 0; i < numbers.length; i++) {
+//     while (numbers[i] <= 0 || numbers[i] % 2 === 1) {
+//       numbers.splice(i, 1);
+//     }
+//   }
+//   return numbers;
+// }
 assert(onlyPositiveEvens([1, -2, 3]), [], "Exercise 77");
 assert(onlyPositiveEvens([2, -5, -6]), [2], "Exercise 77");
 assert(onlyPositiveEvens([3, 3, 4, 6]), [4, 6], "Exercise 77");
@@ -1246,7 +1255,7 @@ addToDone("Exercise 77 is correct.")
 function onlyPositiveOdds(numbers) {
   var positiveOdds = new Array();
   for (var i = 0; i < numbers.length; i++) {
-    if (numbers[i] > 0 && numbers[i] % 2 === 1) {
+    if (numbers[i] % 2 === 1) {
       positiveOdds.push(numbers[i]);
     }
   }
@@ -1261,7 +1270,15 @@ addToDone("Exercise 78 is correct.")
 
 // Exercise 79
 // Write a function definition named onlyNegativeEvens that takes in sequence of numbers and returns an array containing all the negative even numbers from the sequence
-
+function onlyNegativeEvens(numbers) {
+  var negativeNumbers = new Array();
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] < 0 && numbers[i] % 2 === 0) {
+      negativeNumbers.push(numbers[i]);
+    }
+  }
+  return negativeNumbers;
+}
 assert(onlyNegativeEvens([1, -2, 3]), [-2], "Exercise 79");
 assert(onlyNegativeEvens([2, -5, -6]), [-6], "Exercise 79");
 assert(onlyNegativeEvens([3, 3, 4, 6]), [], "Exercise 79");
@@ -1271,7 +1288,15 @@ addToDone("Exercise 79 is correct.")
 
 // Exercise 80
 // Write a function definition named onlyNegativeOdds that takes in sequence of numbers and returns an array containing all the negative odd numbers from the sequence
-
+function onlyNegativeOdds(numbers) {
+  var negativeOdds = new Array();
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === -1) {
+      negativeOdds.push(numbers[i]);
+    }
+  }
+  return negativeOdds;
+}
 assert(onlyNegativeOdds([1, -2, 3]), [], "Exercise 80");
 assert(onlyNegativeOdds([2, -5, -6]), [-5], "Exercise 80");
 assert(onlyNegativeOdds([3, 3, 4, 6]), [], "Exercise 80");
