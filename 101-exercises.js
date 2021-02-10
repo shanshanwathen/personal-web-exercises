@@ -1093,13 +1093,22 @@ addToDone("Exercise 69 is correct.")
 
 // Exercise 70
 // Write a function definition named onlyNegativeNumbers that takes in sequence of numbers and returns the negative numbers in an array.
+// function onlyNegativeNumbers(numbers) {
+//   for (var i = 0; i < numbers.length; i++)  {
+//     while (numbers[i] >= 0) {
+//       numbers.splice(i, 1);
+//     }
+//   }
+//   return numbers;
+// }
 function onlyNegativeNumbers(numbers) {
+  var negativeNumbers = new Array();
   for (var i = 0; i < numbers.length; i++)  {
-    while (numbers[i] >= 0) {
-      numbers.splice(i, 1);
+    if (numbers[i] < 0) {
+      negativeNumbers.push(numbers[i]);
     }
   }
-  return numbers;
+  return negativeNumbers;
 }
 assert(onlyNegativeNumbers([1, 2, 3]), [], "Exercise 70");
 assert(onlyNegativeNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-5, -4, -3, -2, -1], "Exercise 70");
