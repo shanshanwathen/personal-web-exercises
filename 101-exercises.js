@@ -1043,13 +1043,22 @@ addToDone("Exercise 67 is correct.")
 
 // Exercise 68
 // Write a function definition named onlyEvenNumbers that takes in sequence of numbers and returns the even numbers in an array.
+// function onlyEvenNumbers(numbers) {
+//   for (var i = 0; i < numbers.length; i++) {
+//     while (numbers[i] % 2 === 1 || numbers[i] % 2 === -1) {
+//       numbers.splice(i ,1);
+//     }
+//   }
+//   return numbers;
+// }
 function onlyEvenNumbers(numbers) {
+  var evenNumbers = new Array();
   for (var i = 0; i < numbers.length; i++) {
-    while (numbers[i] % 2 === 1 || numbers[i] % 2 === -1) {
-      numbers.splice(i ,1);
+    if (numbers[i] % 2 === 0) {
+      evenNumbers.push(numbers[i])
     }
   }
-  return numbers;
+  return evenNumbers;
 }
 assert(onlyEvenNumbers([1, 2, 3]), [2], "Exercise 68");
 assert(onlyEvenNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-4, -2, 2, 4], "Exercise 68");
