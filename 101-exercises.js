@@ -1068,13 +1068,22 @@ addToDone("Exercise 68 is correct.")
 
 // Exercise 69
 // Write a function definition named onlyPositiveNumbers that takes in sequence of numbers and returns the positive numbers in an array.
+// function onlyPositiveNumbers(numbers) {
+//   for (var i = 0; i < numbers.length; i++) {
+//     while (numbers[i] <= 0) {
+//       numbers.splice(i, 1);
+//     }
+//   }
+//   return numbers;
+// }
 function onlyPositiveNumbers(numbers) {
+  var positiveNumbers = new Array();
   for (var i = 0; i < numbers.length; i++) {
-    while (numbers[i] <= 0) {
-      numbers.splice(i, 1);
+    if (numbers[i] > 0) {
+      positiveNumbers.push(numbers[i]);
     }
   }
-  return numbers;
+  return positiveNumbers;
 }
 assert(onlyPositiveNumbers([1, 2, 3]), [1, 2, 3], "Exercise 69");
 assert(onlyPositiveNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [1, 2, 3, 4, 5], "Exercise 69");
