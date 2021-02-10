@@ -1187,18 +1187,17 @@ assert(countPositives([-2, -1, -5]), 0, "Exercise 76");
 addToDone("Exercise 76 is correct.")
 
 
-// Exercise 77
-// Write a function definition named onlyPositiveEvens that takes in sequence of numbers and returns an array containing all the positive evens from the sequence
-// function onlyPositiveEvens(numbers) {
-//   var positiveEvens = new Array();
-//   for (var i = 0; i < numbers.length; i++) {
-//     while (numbers[i] <= 0 || numbers[i] % 2 !== 0) {
-//       console.log(numbers[i]);
-//       numbers.splice(i, 1);
-//     }
-//   }
-//   return numbers;
-// }
+//Exercise 77
+//Write a function definition named onlyPositiveEvens that takes in sequence of numbers and returns an array containing all the positive evens from the sequence
+function onlyPositiveEvens(numbers) {
+  var positiveEvens = new Array();
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 0 && numbers[i] % 2 === 0) {
+      positiveEvens.push(numbers[i]);
+    }
+  }
+  return positiveEvens;
+}
 assert(onlyPositiveEvens([1, -2, 3]), [], "Exercise 77");
 assert(onlyPositiveEvens([2, -5, -6]), [2], "Exercise 77");
 assert(onlyPositiveEvens([3, 3, 4, 6]), [4, 6], "Exercise 77");
@@ -1208,7 +1207,15 @@ addToDone("Exercise 77 is correct.")
 
 // Exercise 78
 // Write a function definition named onlyPositiveOdds that takes in sequence of numbers and returns an array containing all the positive odd numbers from the sequence
-
+function onlyPositiveOdds(numbers) {
+  var positiveOdds = new Array();
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] > 0 && numbers[i] % 2 === 1) {
+      positiveOdds.push(numbers[i]);
+    }
+  }
+  return positiveOdds;
+}
 assert(onlyPositiveOdds([1, -2, 3]), [1, 3], "Exercise 78");
 assert(onlyPositiveOdds([2, -5, -6]), [], "Exercise 78");
 assert(onlyPositiveOdds([3, 3, 4, 6]), [3, 3], "Exercise 78");
