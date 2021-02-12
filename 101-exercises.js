@@ -1416,7 +1416,9 @@ const thomasPaper = {
 
 // Exercise 87
 // Write a function named getPaperTitle that takes in a object and returns the title property
-
+function getPaperTitle(object) {
+  return object.title;
+}
 assert(getPaperTitle(tukeyPaper), "The Future of Data Analysis", "Exercise 87");
 assert(getPaperTitle(thomasPaper), "A mathematical model of glutathione metabolism", "Exercise 87");
 addToDone("Exercise 87 is correct.")
@@ -1424,7 +1426,9 @@ addToDone("Exercise 87 is correct.")
 
 // Exercise 88
 // Write a function named getYearPublished that takes in an objects and returns the value behind the "year_published" key.
-
+function getYearPublished(object) {
+  return object.year_published;
+}
 assert(getYearPublished(tukeyPaper), 1962, "Exercise 88");
 assert(getYearPublished(thomasPaper), 2008, "Exercise 88");
 addToDone("Exercise 88 is correct.")
@@ -1439,7 +1443,9 @@ const book = {
 
 // Exercise 89
 // Write a function named getPrice that takes in a object and returns the price
-
+function getPrice(object) {
+  return object.price;
+}
 assert(getPrice(book), 36.99, "Exercise 89");
 addToDone("Exercise 89 is complete.")
 
@@ -1447,8 +1453,9 @@ addToDone("Exercise 89 is complete.")
 
 // Exercise 90
 // Write a function named getBookAuthor that takes in a object (the above declared book variable) and returns the author's name
-
-
+function getBookAuthor(object) {
+  return object.author;
+}
 assert(getBookAuthor(book), "Frances Buontempo", "Exercise 90");
 addToDone("Exercise 90 is complete.")
 
