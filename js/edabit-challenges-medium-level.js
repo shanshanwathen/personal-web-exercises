@@ -63,5 +63,10 @@
     possibleBonus(5, 3) ➞ false
      */
 
+    function possibleBonus(a, b) {
+        return a < b && a + 6 >= b;
+    }
+
+
 
 })();
