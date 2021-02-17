@@ -127,5 +127,28 @@
     }
 
 
+    /*
+    You just returned home to find your mansion has been robbed! Given an object of the stolen items, return the total amount of the burglary(number). If nothing was robbed, return the string "Lucky you!".
 
+    Examples
+
+    const stolenItems = {
+        tv: 30,
+        skate: 20,
+        stereo: 50,
+    } ➞ 100
+     */
+
+    function calculateLosses(obj) {
+        var losses = 0;
+        if (obj.length > 0) {
+            for (var i = 0; i < obj.length; i++) {
+                losses = losses + obj[i];
+            }
+            return losses;
+        } else {
+            return "Lucky you!";
+        }
+
+    }
 })();
