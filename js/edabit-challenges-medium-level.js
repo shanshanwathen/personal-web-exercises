@@ -68,5 +68,47 @@
     }
 
 
+    /*
+    This Triangular Number Sequence is generated from a pattern of dots that form a triangle. The first 5 numbers of the sequence, or dots, are:
+
+    1, 3, 6, 10, 15
+    This means that the first triangle has just one dot, the second one has three dots, the third one has 6 dots and so on.
+    Write a function that gives the number of dots with its corresponding triangle number of the sequence.
+
+    Examples
+    triangle(1) ➞ 1
+    triangle(6) ➞ 21
+    triangle(215) ➞ 23220
+     */
+
+    function triangle(number) {
+        var result = 0;
+        for (var i = 1; i <= number; i++) {
+            result = result + i;
+        }
+        return result;
+    }
+
+
+    /*
+    Create a function that takes the age and return the age in days.
+
+    Examples
+    calcAge(65) ➞ 23725
+    calcAge(0) ➞ 0
+    calcAge(20) ➞ 7300
+
+    Notes
+    Use 365 days as the length of a year for this challenge.
+    Ignore leap years and days between last birthday and now.
+    Expect only positive integer inputs.
+     */
+
+    function calcAge(age) {
+        return age * 365;
+    }
+
+
+
 
 })();
