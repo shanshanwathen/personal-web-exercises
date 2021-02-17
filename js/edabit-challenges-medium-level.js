@@ -175,4 +175,48 @@
         }
         return number.toString().length;
     }
+
+
+    /*
+    Create a function that returns true if all parameters are truthy, and false otherwise.
+
+    Examples
+    allTruthy(true, true, true) ➞ true
+    allTruthy(true, false, true) ➞ false
+    allTruthy(5, 4, 3, 2, 1, 0) ➞ false
+
+    Notes
+    Falsy values include false, 0, "" (empty string), null, undefined, and NaN; everything else is truthy.
+    You will always be supplied with at least one parameter.
+     */
+
+
+
+    /*
+    Create a function which concantenates the number 7 to the end of every chord in an array. Ignore all chords which already end with 7.
+
+    Examples
+    jazzify(["G", "F", "C"]) ➞ ["G7", "F7", "C7"]
+
+    jazzify(["Dm", "G", "E", "A"]) ➞ ["Dm7", "G7", "E7", "A7"]
+
+    jazzify(["F7", "E7", "A7", "Ab7", "Gm7", "C7"]) ➞ ["F7", "E7", "A7", "Ab7", "Gm7", "C7"]
+
+    jazzify([]) ➞ []
+    Notes
+    Return an empty array if the given array is empty.
+    You can expect all the tests to have valid chords.
+     */
+
+    function jazzify(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            if (!arr[i].includes("7")) {
+                arr[i] = arr[i] + "7";
+            }
+        }
+        return arr;
+    }
+
+
+
 })();
