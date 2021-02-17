@@ -137,19 +137,24 @@
         skate: 20,
         stereo: 50,
     } ➞ 100
+
+    const stolenItems = {
+      painting: 20000,
+    } ➞ 20000
+
+    const stolenItems = {} ➞ "Lucky you!"
      */
 
     function calculateLosses(obj) {
         var losses = 0;
-        if (obj.length > 0) {
-            for (var i = 0; i < obj.length; i++) {
-                losses = losses + obj[i];
+        if (Object.keys(obj).length > 0) {
+            for (let ele in obj) {
+                losses = losses + obj[ele];
             }
             return losses;
         } else {
             return "Lucky you!";
         }
-
     }
 
     /*
