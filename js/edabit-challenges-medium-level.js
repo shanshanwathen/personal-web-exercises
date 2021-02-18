@@ -303,8 +303,9 @@ If the given string does not contain "a", "b", or "c", return null.
 function removeABC(string) {
     if (!(string.includes("a") || string.includes("b") || string.includes("c"))) {
         return null;
+    } else {
+        return string.replace(/abc/g, "");
     }
-    return string.replace(/abc/g, "");
 }
 
 /*

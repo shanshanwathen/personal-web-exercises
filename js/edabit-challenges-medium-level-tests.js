@@ -253,38 +253,108 @@ describe("boxSeq", function() {
 
 
 // Remove the Letters ABC
-Test.assertEquals(removeABC("This might be a bit hard"), "This might e  it hrd")
-Test.assertEquals(removeABC("This is awesome"), "This is wesome")
-Test.assertEquals(removeABC("hello world!"), null)
-Test.assertEquals(removeABC("coding is fun!"), "oding is fun!")
-Test.assertEquals(removeABC(""), null)
+describe("removeABC", function() {
+    it("should be a defined function", function() {
+        expect(typeof removeABC).toBe("function");
+    });
+    it("should return null when passed in empty string", function() {
+        expect(removeABC("")).toBe(null);
+    });
+    it("should return \"This is wesome\" when passed in \"This is awesome\"", function() {
+        expect(removeABC("This is awesome")).toBe("This is wesome");
+    });
+    it("should return \"This might e  it hrd\" when passed in \"This might be a bit hard\"", function() {
+        expect(removeABC("This might be a bit hard")).toBe("This might e  it hrd");
+    });
+    it("should return null when passed in \"hello world!\"", function() {
+        expect(removeABC("hello world!")).toBe(null);
+    });
+    it("should return \"oding is fun!\" when passed in \"coding is fun!\"", function() {
+        expect(removeABC("coding is fun!")).toBe("oding is fun!");
+    });
+})
 
 
 // Special Arrays
-Test.assertEquals(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3]), true)
-Test.assertEquals(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3]), false)
-Test.assertEquals(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]), false)
-Test.assertEquals(isSpecialArray([1, 1, 1, 2]), false)
-Test.assertEquals(isSpecialArray([2, 2, 2, 2]), false)
-Test.assertEquals(isSpecialArray([2, 1, 2, 1]), true)
-Test.assertEquals(isSpecialArray([4, 5, 6, 7]), true)
-Test.assertEquals(isSpecialArray([4, 5, 6, 7, 0, 5]), true)
+describe("isSpecialArray", function() {
+    it("should be a defined function", function() {
+        expect(typeof isSpecialArray).toBe("function");
+    });
+    it("should return a boolean value when passed an array", function() {
+        expect(typeof isSpecialArray([])).toBe("boolean");
+    });
+    it("should return true when passed [2, 7, 4, 9, 6, 1, 6, 3]", function() {
+        expect(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3])).toBe(true);
+    });
+    it("should return false when passed [2, 7, 9, 1, 6, 1, 6, 3]", function() {
+        expect(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3])).toBe(false);
+    });
+    it("should return false when passed [2, 7, 8, 8, 6, 1, 6, 3]", function() {
+        expect(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3])).toBe(false);
+    });
+    it("should return false when passed [1, 1, 1, 2]", function() {
+        expect(isSpecialArray([1, 1, 1, 2])).toBe(false);
+    });
+    it("should return false when passed [2, 2, 2, 2]", function() {
+        expect(isSpecialArray([2, 2, 2, 2])).toBe(false);
+    });
+    it("should return true when passed [2, 1, 2, 1]", function() {
+        expect(isSpecialArray([2, 1, 2, 1])).toBe(true);
+    });
+    it("should return true when passed [4, 5, 6, 7]", function() {
+        expect(isSpecialArray([4, 5, 6, 7])).toBe(true);
+    });
+    it("should return true when passed [4, 5, 6, 7, 0, 5]", function() {
+        expect(isSpecialArray([4, 5, 6, 7, 0, 5])).toBe(true);
+    });
+})
 
 
 // Likes vs. Dislikes
-Test.assertEquals(likeOrDislike(['Dislike']), 'Dislike')
-Test.assertEquals(likeOrDislike(['Like', 'Like']), 'Nothing')
-Test.assertEquals(likeOrDislike(['Dislike', 'Dislike']), 'Nothing')
-Test.assertEquals(likeOrDislike(['Like', 'Like', 'Like']), 'Like')
-Test.assertEquals(likeOrDislike(['Like', 'Dislike']), 'Dislike')
-Test.assertEquals(likeOrDislike(['Dislike', 'Like']), 'Like')
-Test.assertEquals(likeOrDislike(['Like', 'Dislike', 'Dislike']), 'Nothing')
-Test.assertEquals(likeOrDislike(['Dislike', 'Like', 'Dislike']), 'Dislike')
-Test.assertEquals(likeOrDislike([]), 'Nothing')
-Test.assertEquals(likeOrDislike(['Like', 'Like', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike']), 'Dislike')
-Test.assertEquals(likeOrDislike(['Like', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Like', 'Like']), 'Like')
-Test.assertEquals(likeOrDislike(['Like', 'Like', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike', 'Dislike', 'Like', 'Like', 'Like', 'Dislike', 'Dislike']), 'Nothing')
-Test.assertEquals(likeOrDislike(['Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike']), 'Dislike')
+describe("likeOrDislike", function() {
+    it("should be a defined function", function() {
+        expect(typeof likeOrDislike).toBe("function");
+    });
+    it("should return 'Dislike' when passed in ['Dislike']", function() {
+        expect(likeOrDislike(['Dislike'])).toBe("Dislike");
+    });
+    it("should return 'Nothing' when passed in ['Like', 'Like']", function() {
+        expect(likeOrDislike(['Like', 'Like'])).toBe("Nothing");
+    });
+    it("should return 'Nothing' when passed in ['Dislike', 'Dislike']", function() {
+        expect(likeOrDislike(['Dislike', 'Dislike'])).toBe("Nothing");
+    });
+    it("should return 'Like' when passed in ['Like', 'Like', 'Like']", function() {
+        expect(likeOrDislike(['Like', 'Like', 'Like'])).toBe("Like");
+    });
+    it("should return 'Dislike' when passed in ['Like', 'Dislike']", function() {
+        expect(likeOrDislike(['Like', 'Dislike'])).toBe("Dislike");
+    });
+    it("should return 'Like' when passed in ['Dislike', 'Like']", function() {
+        expect(likeOrDislike(['Dislike', 'Like'])).toBe("Like");
+    });
+    it("should return 'Nothing' when passed in ['Like', 'Dislike', 'Dislike']", function() {
+        expect(likeOrDislike(['Like', 'Dislike', 'Dislike'])).toBe("Nothing");
+    });
+    it("should return 'Dislike' when passed in ['Dislike', 'Like', 'Dislike']", function() {
+        expect(likeOrDislike(['Dislike', 'Like', 'Dislike'])).toBe("Dislike");
+    });
+    it("should return 'Nothing' when passed in []", function() {
+        expect(likeOrDislike([])).toBe("Nothing");
+    });
+    it("should return 'Dislike' when passed in ['Like', 'Like', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike']", function() {
+        expect(likeOrDislike(['Like', 'Like', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike'])).toBe("Dislike");
+    });
+    it("should return 'Like' when passed in ['Like', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Like', 'Like']", function() {
+        expect(likeOrDislike(['Like', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Like', 'Like'])).toBe("Like");
+    });
+    it("should return 'Nothing' when passed in ['Like', 'Like', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike', 'Dislike', 'Like', 'Like', 'Like', 'Dislike', 'Dislike']", function() {
+        expect(likeOrDislike(['Like', 'Like', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike', 'Dislike', 'Like', 'Like', 'Like', 'Dislike', 'Dislike'])).toBe("Nothing");
+    });
+    it("should return 'Dislike' when passed in ['Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike']", function() {
+        expect(likeOrDislike(['Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike'])).toBe("Dislike");
+    });
+})
 
 
 // Factor Chain
