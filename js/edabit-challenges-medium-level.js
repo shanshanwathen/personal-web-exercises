@@ -372,19 +372,29 @@
     If the array is empty, return "Nothing".
      */
 
+    // function likeOrDislike(arr) {
+    //     if (arr.length === 0) {
+    //         return "Nothing";
+    //     }
+    //     var result;
+    //     for (var i = 0; i < arr.length; i++){
+    //         if (result === arr[i]) {
+    //             result = "Nothing";
+    //         } else {
+    //             result = arr[i];
+    //         }
+    //     }
+    //     return result;
+    // }
+
     function likeOrDislike(arr) {
         if (arr.length === 0) {
             return "Nothing";
+        } else {
+            return arr.reduce(function(elementOne, elementTwo) {
+                return (elementOne === elementTwo) ? "Nothing" : elementTwo;
+            });
         }
-        var result;
-        for (var i = 0; i < arr.length; i++){
-            if (result === arr[i]) {
-                result = "Nothing";
-            } else {
-                result = arr[i];
-            }
-        }
-        return result;
     }
 
 })();
