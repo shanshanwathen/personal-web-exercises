@@ -34,7 +34,7 @@ describe('arrayOfMultiples', function() {
         expect(typeof arrayOfMultiples).toBe('function');
     });
     it('should return an array when executed', function() {
-        expect(typeof arrayOfMultiples()).toBe('object');
+        expect(Array.isArray(arrayOfMultiples())).toBe(true);
     });
     it('should return [7, 14, 21, 28, 35] when passed 7 and 5', function() {
         expect(arrayOfMultiples(7,5)).toBe([7, 14, 21, 28, 35]);
@@ -102,41 +102,128 @@ describe('calculateLosses', function() {
 
 
 // Integer Digits Count
-let [numVector, resVector] = [
-    [0, 318, -92563, 4666, -314890, 654321, 638476, 12345, 1289396, -1232323, 12839393, -231273683],
-    [1, 3, 5, 4, 6, 6, 6, 5, 7, 7, 8, 9]
-]
-for (let i in numVector) Test.assertEquals(count(numVector[i]), resVector[i])
+describe("count", function() {
+    it("should be a defined function", function() {
+        expect(typeof(count)).toBe("function");
+    });
+    it("should return a number when called", function() {
+        expect(typeof(count())).toBe("number");
+    });
+    it("should return 1 when passed 0", function() {
+        expect(count(0)).toBe(1);
+    });
+    it("should return 1 when passed 0", function() {
+        expect(count(0)).toBe(1);
+    });
+    it("should return 3 when passed 318", function() {
+        expect(count(318)).toBe(3);
+    });
+    it("should return 5 when passed -92563", function() {
+        expect(count(-92563)).toBe(5);
+    });
+    it("should return 4 when passed 4666", function() {
+        expect(count(4666)).toBe(4);
+    });
+    it("should return 6 when passed -314890", function() {
+        expect(count(-314890)).toBe(6);
+    });
+    it("should return 6 when passed 654321", function() {
+        expect(count(654321)).toBe(6);
+    });
+    it("should return 6 when passed 638476", function() {
+        expect(count(638476)).toBe(6);
+    });
+    it("should return 5 when passed 12345", function() {
+        expect(count(12345)).toBe(5);
+    });
+    it("should return 7 when passed 1289396", function() {
+        expect(count(1289396)).toBe(7);
+    });
+    it("should return 7 when passed -1232323", function() {
+        expect(count(-1232323)).toBe(7);
+    });
+    it("should return 8 when passed 12839393", function() {
+        expect(count(12839393)).toBe(8);
+    });
+    it("should return 9 when passed -231273683", function() {
+        expect(count(-231273683)).toBe(9);
+    });
+})
 
 
 // Check if All Values Are True
-const tests = [
-    [[true, true, true], true],
-    [[false], false],
-    [[true], true],
-    [[false, true, true, true, 20], false],
-    [[Infinity, 92347238467.219378, 'Hello World'], true],
-    [[Infinity, 92347238467.219378, 'Hello World', 0], false],
-    [['', 'r', 'ra', 'rac', 'race'], false],
-    [[+'Hi!'], false],
-    [[{}.twice], false],
-    [[true, 32, Number, [][1]], false],
-    [[Boolean, Number, Object, String], true],
-];
-
-tests.forEach(([a, e]) => Test.assertEquals(allTruthy(...a), e))
-
+describe("allTruthy", function() {
+    it("should be a defined function", function() {
+        expect(typeof(allTruthy)).toBe("function");
+    });
+    it("should return a boolean value when called", function() {
+        expect(typeof(allTruthy())).toBe("boolean");
+    });
+    it("should return true when passed [true, true, true]", function() {
+        expect(allTruthy([true, true, true])).toBe(true);
+    });
+    it("should return false when passed [false]", function() {
+        expect(allTruthy([false])).toBe(false);
+    });
+    it("should return true when passed [true]", function() {
+        expect(allTruthy([true])).toBe(true);
+    });
+    it("should return false when passed [false, true, true, true, 20]", function() {
+        expect(allTruthy([false, true, true, true, 20])).toBe(false);
+    });
+    it("should return true when passed [Infinity, 92347238467.219378, 'Hello World']", function() {
+        expect(allTruthy([Infinity, 92347238467.219378, 'Hello World'])).toBe(true);
+    });
+    it("should return false when passed [Infinity, 92347238467.219378, 'Hello World', 0]", function() {
+        expect(allTruthy([Infinity, 92347238467.219378, 'Hello World', 0])).toBe(false);
+    });
+    it("should return false when passed ['', 'r', 'ra', 'rac', 'race']", function() {
+        expect(allTruthy(['', 'r', 'ra', 'rac', 'race'])).toBe(false);
+    });
+    it("should return false when passed [+'Hi!']", function() {
+        expect(allTruthy([+'Hi!'])).toBe(false);
+    });
+    it("should return false when passed [{}.twice]", function() {
+        expect(allTruthy([{}.twice])).toBe(false);
+    });
+    it("should return false when passed [true, 32, Number, [][1]]", function() {
+        expect(allTruthy([true, 32, Number, [][1]])).toBe(false);
+    });
+    it("should return true when passed [Boolean, Number, Object, String]", function() {
+        expect(allTruthy([Boolean, Number, Object, String])).toBe(true);
+    });
+})
 
 
 // Instant JAZZ
-Test.assertSimilar(jazzify(['G', 'F', 'C']), ['G7', 'F7', 'C7'])
-Test.assertSimilar(jazzify(['Dm', 'G', 'E', 'A']), ['Dm7', 'G7', 'E7', 'A7'])
-Test.assertSimilar(jazzify(['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7']), ['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7'])
-Test.assertSimilar(jazzify(['G', 'C7']), ['G7', 'C7'])
-Test.assertSimilar(jazzify([]), [])
+describe("jazzify", function() {
+    it("should be a defined function", function() {
+        expect(typeof jazzify).toBe("function");
+    });
+    it("should return an array when called", function() {
+        expect(Array.isArray(jazzify())).toBe(true);
+    });
+    it("should return ['G7', 'F7', 'C7'] when passed ['G', 'F', 'C']", function() {
+        expect(jazzify(['G', 'F', 'C'])).toBe(['G7', 'F7', 'C7']);
+    });
+    it("should return ['Dm7', 'G7', 'E7', 'A7'] when passed ['Dm', 'G', 'E', 'A']", function() {
+        expect(jazzify(['Dm', 'G', 'E', 'A'])).toBe(['Dm7', 'G7', 'E7', 'A7']);
+    });
+    it("should return ['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7'] when passed ['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7']", function() {
+        expect(jazzify(['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7'])).toBe(['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7']);
+    });
+    it("should return ['G7', 'C7'] when passed ['G', 'C7']", function() {
+        expect(jazzify(['G', 'C7'])).toBe(['G7', 'C7']);
+    });
+    it("should return [] when passed []", function() {
+        expect(jazzify([])).toBe([]);
+    });
+})
+
 
 
 // Algebra Sequence — Boxes
+describe
 Test.assertEquals(boxSeq(5), 7)
 Test.assertEquals(boxSeq(0), 0)
 Test.assertEquals(boxSeq(6), 6)
