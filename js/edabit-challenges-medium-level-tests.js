@@ -1,8 +1,95 @@
 
 
 
+// Triangular Number Sequence
+Test.assertEquals(triangle(1), 1)
+Test.assertEquals(triangle(2), 3)
+Test.assertEquals(triangle(3), 6)
+Test.assertEquals(triangle(8), 36)
+Test.assertEquals(triangle(2153), 2318781)
 
 
+// Array of Multiples
+Test.assertSimilar(arrayOfMultiples(7, 5), [7, 14, 21, 28, 35])
+Test.assertSimilar(arrayOfMultiples(12, 10), [12, 24, 36, 48, 60, 72, 84, 96, 108, 120])
+Test.assertSimilar(arrayOfMultiples(17, 7), [17, 34, 51, 68, 85, 102, 119])
+Test.assertSimilar(arrayOfMultiples(630, 14), [630, 1260, 1890, 2520, 3150, 3780, 4410, 5040, 5670, 6300, 6930, 7560, 8190, 8820])
+Test.assertSimilar(arrayOfMultiples(140, 3), [140, 280, 420])
+Test.assertSimilar(arrayOfMultiples(7, 8), [7, 14, 21, 28, 35, 42, 49, 56])
+Test.assertSimilar(arrayOfMultiples(11, 21), [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220, 231])
+
+
+// Burglary Series (01): Calculate Total Losses
+Test.assertEquals(calculateLosses({
+    tv: 30,
+    skate: 20,
+    stereo: 50,
+}), 100)
+
+Test.assertEquals(calculateLosses({
+    ring: 30000,
+    painting: 20000,
+    bust: 1,
+}), 50001)
+
+Test.assertEquals(calculateLosses({
+    chair: 3500,
+}), 3500)
+
+
+// Integer Digits Count
+let [numVector, resVector] = [
+    [0, 318, -92563, 4666, -314890, 654321, 638476, 12345, 1289396, -1232323, 12839393, -231273683],
+    [1, 3, 5, 4, 6, 6, 6, 5, 7, 7, 8, 9]
+]
+for (let i in numVector) Test.assertEquals(count(numVector[i]), resVector[i])
+
+
+// Check if All Values Are True
+const tests = [
+    [[true, true, true], true],
+    [[false], false],
+    [[true], true],
+    [[false, true, true, true, 20], false],
+    [[Infinity, 92347238467.219378, 'Hello World'], true],
+    [[Infinity, 92347238467.219378, 'Hello World', 0], false],
+    [['', 'r', 'ra', 'rac', 'race'], false],
+    [[+'Hi!'], false],
+    [[{}.twice], false],
+    [[true, 32, Number, [][1]], false],
+    [[Boolean, Number, Object, String], true],
+];
+
+tests.forEach(([a, e]) => Test.assertEquals(allTruthy(...a), e))
+
+
+
+// Instant JAZZ
+Test.assertSimilar(jazzify(['G', 'F', 'C']), ['G7', 'F7', 'C7'])
+Test.assertSimilar(jazzify(['Dm', 'G', 'E', 'A']), ['Dm7', 'G7', 'E7', 'A7'])
+Test.assertSimilar(jazzify(['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7']), ['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7'])
+Test.assertSimilar(jazzify(['G', 'C7']), ['G7', 'C7'])
+Test.assertSimilar(jazzify([]), [])
+
+
+// Algebra Sequence — Boxes
+Test.assertEquals(boxSeq(5), 7)
+Test.assertEquals(boxSeq(0), 0)
+Test.assertEquals(boxSeq(6), 6)
+Test.assertEquals(boxSeq(99), 101)
+Test.assertEquals(boxSeq(2), 2)
+Test.assertEquals(boxSeq(1), 3)
+
+
+// Remove the Letters ABC
+Test.assertEquals(removeABC("This might be a bit hard"), "This might e  it hrd")
+Test.assertEquals(removeABC("This is awesome"), "This is wesome")
+Test.assertEquals(removeABC("hello world!"), null)
+Test.assertEquals(removeABC("coding is fun!"), "oding is fun!")
+Test.assertEquals(removeABC(""), null)
+
+
+// Special Arrays
 Test.assertEquals(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3]), true)
 Test.assertEquals(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3]), false)
 Test.assertEquals(isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]), false)

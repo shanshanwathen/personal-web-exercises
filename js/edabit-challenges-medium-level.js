@@ -1,6 +1,7 @@
 (function() {
     "use strict";
     /*
+
     Create a function which returns the number of true values there are in an array.
 
     Examples:
@@ -68,7 +69,30 @@
     }
 
 
+
     /*
+    Create a function that takes the age and return the age in days.
+
+    Examples
+    calcAge(65) ➞ 23725
+    calcAge(0) ➞ 0
+    calcAge(20) ➞ 7300
+
+    Notes
+    Use 365 days as the length of a year for this challenge.
+    Ignore leap years and days between last birthday and now.
+    Expect only positive integer inputs.
+     */
+
+    function calcAge(age) {
+        return age * 365;
+    }
+
+
+
+    /*
+    Triangular Number Sequence
+
     This Triangular Number Sequence is generated from a pattern of dots that form a triangle. The first 5 numbers of the sequence, or dots, are:
 
     1, 3, 6, 10, 15
@@ -91,25 +115,8 @@
 
 
     /*
-    Create a function that takes the age and return the age in days.
+    Array of Multiples
 
-    Examples
-    calcAge(65) ➞ 23725
-    calcAge(0) ➞ 0
-    calcAge(20) ➞ 7300
-
-    Notes
-    Use 365 days as the length of a year for this challenge.
-    Ignore leap years and days between last birthday and now.
-    Expect only positive integer inputs.
-     */
-
-    function calcAge(age) {
-        return age * 365;
-    }
-
-
-    /*
     Creat a function that takes in two numbers as arguments (num, length) and returns an array  of multiples of num until the array length reaches  length.
 
     Examples
@@ -128,6 +135,8 @@
 
 
     /*
+    Burglary Series (01): Calculate Total Losses
+
     You just returned home to find your mansion has been robbed! Given an object of the stolen items, return the total amount of the burglary(number). If nothing was robbed, return the string "Lucky you!".
 
     Examples
@@ -158,6 +167,8 @@
     }
 
     /*
+    Integer Digits Count
+
     Create a function that counts the integer's number of digits.
 
     Examples
@@ -178,6 +189,8 @@
 
 
     /*
+    Check if All Values Are True
+
     Create a function that returns true if all parameters are truthy, and false otherwise.
 
     Examples
@@ -197,6 +210,8 @@
 
 
     /*
+    Instant JAZZ
+
     Create a function which concantenates the number 7 to the end of every chord in an array. Ignore all chords which already end with 7.
 
     Examples
@@ -223,6 +238,8 @@
 
 
     /*
+    Algebra Sequence — Boxes
+
     Create a function that takes a number (step) as an argument and returns the amount of boxes in that step of the sequence.
 
     Step 0: Start with 0
@@ -253,6 +270,8 @@
 
 
     /*
+    Remove the Letters ABC
+
     Create a function that will remove the letters "a", "b" and "c" from the given string and return the modified version. If the given string does not contain "a", "b", or "c", return null.
 
     Examples
@@ -285,6 +304,8 @@
     }
 
     /*
+    Special Arrays
+
     An array is special if every even index contains an even number and every odd index contains an odd number. Create a function that returns true if an array is special, and false otherwise.
 
     Examples
@@ -313,13 +334,57 @@
     //     return true;
     // }
 
+    // function isSpecialArray(arr) {
+    //     for (var i = 0; i < arr.length; i++) {
+    //         if(i % 2 !== arr[i] % 2) {
+    //             return false;
+    //         }
+    //     }
+    //     return true;
+    // }
+
     function isSpecialArray(arr) {
-        for (var i = 0; i < arr.length; i++) {
-            if(i % 2 !== arr[i] % 2) {
-                return false;
+        return arr.every(function(element, index) {
+            return element % 2 === index % 2;
+        })
+    }
+
+
+    /*
+    Likes vs. Dislikes
+
+    YouTube currently displays a like and a dislike button, allowing you to express your opinions about particular content. It's set up in such a way that you cannot like and dislike a video at the same time.
+
+    There are two other interesting rules to be noted about the interface:
+
+    Pressing a button, which is already active, will undo your press.
+    If you press the like button after pressing the dislike button, the like button overwrites the previous "dislike" state. The same is true for the other way round.
+    Create a function that takes an array of button inputs and returns the final state.
+
+    Examples
+    likeOrDislike(["Dislike"]) ➞ "Dislike"
+    likeOrDislike(["Like", "Like"]) ➞ "Nothing"
+    likeOrDislike(["Dislike", "Like"]) ➞ "Like"
+    likeOrDislike(["Like", "Dislike", "Dislike"]) ➞ "Nothing"
+
+    Notes
+    If no button is currently active, return "Nothing".
+    If the array is empty, return "Nothing".
+     */
+
+    function likeOrDislike(arr) {
+        if (arr.length === 0) {
+            return "Nothing";
+        }
+        var result;
+        for (var i = 0; i < arr.length; i++){
+            if (result === arr[i]) {
+                result = "Nothing";
+            } else {
+                result = arr[i];
             }
         }
-        return true;
+        return result;
     }
 
 })();
