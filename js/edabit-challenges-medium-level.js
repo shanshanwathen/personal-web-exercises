@@ -251,4 +251,67 @@
         return numberOfBoxes;
     }
 
+
+    /*
+    Create a function that will remove the letters "a", "b" and "c" from the given string and return the modified version. If the given string does not contain "a", "b", or "c", return null.
+
+    Examples
+    removeABC("This might be a bit hard") ➞ "This might e  it hrd"
+
+    removeABC("hello world!") ➞ null
+
+    removeABC("") ➞ null
+    Notes
+    If the given string does not contain "a", "b", or "c", return null.
+     */
+
+    // function removeABC(str) {
+    //     if (!str.includes("a") && !str.includes("b") && !str.includes("c")) {
+    //         return null;
+    //     }
+    //     for (var i = 0; i < str.length; i++) {
+    //         if (str[i] === "a" || str[i] === "b" || str[i] === "c") {
+    //             str = str.replace(str[i], "");
+    //         }
+    //     }
+    //     return str;
+    // }
+
+    function removeABC(string) {
+        if (!(string.includes("a") || string.includes("b") || string.includes("c"))) {
+            return null;
+        }
+        return string.replace(/abc/g, "");
+    }
+
+    /*
+    An array is special if every even index contains an even number and every odd index contains an odd number. Create a function that returns true if an array is special, and false otherwise.
+
+    Examples
+    isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3]) ➞ true
+    // Even indices: [2, 4, 6, 6]; Odd indices: [7, 9, 1, 3]
+
+    isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3]) ➞ false
+    // Index 2 has an odd number 9.
+
+    isSpecialArray([2, 7, 8, 8, 6, 1, 6, 3]) ➞ false
+    // Index 3 has an even number 8.
+     */
+
+    function isSpecialArray(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            var oddArray = [], evenArray = [];
+            if (i % 2 === 0) {
+                if (arr[i] % 2 !== 0) {
+                    return false;
+                }
+            } else {
+                if (arr[i] % 2 === 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
 })();
