@@ -65,8 +65,8 @@ describe('calculateLosses', function() {
     it('should be a defined function', function() {
         expect(typeof calculateLosses).toBe('function');
     });
-    it('should return a number when executed', function() {
-        expect(typeof calculateLosses()).toBe('number');
+    it('should return "Lucky you!" when passed in empty object', function() {
+        expect(calculateLosses({})).toBe("Lucky you!");
     });
     it('should return 100 when passed {\n' +
         '    tv: 30,\n' +
@@ -102,12 +102,13 @@ describe('calculateLosses', function() {
 
 
 // Integer Digits Count
+var random = Math.floor(Math.random() * 100);
 describe("count", function() {
     it("should be a defined function", function() {
         expect(typeof(count)).toBe("function");
     });
-    it("should return a number when called", function() {
-        expect(typeof(count())).toBe("number");
+    it("should return a number when passed in a number", function() {
+        expect(typeof(count(random))).toBe("number");
     });
     it("should return 1 when passed 0", function() {
         expect(count(0)).toBe(1);
@@ -156,8 +157,8 @@ describe("allTruthy", function() {
     it("should be a defined function", function() {
         expect(typeof(allTruthy)).toBe("function");
     });
-    it("should return a boolean value when called", function() {
-        expect(typeof(allTruthy())).toBe("boolean");
+    it("should return a boolean value when passed in an array", function() {
+        expect(typeof(allTruthy([]))).toBe("boolean");
     });
     it("should return true when passed [true, true, true]", function() {
         expect(allTruthy([true, true, true])).toBe(true);
@@ -200,23 +201,23 @@ describe("jazzify", function() {
     it("should be a defined function", function() {
         expect(typeof jazzify).toBe("function");
     });
-    it("should return an array when called", function() {
-        expect(Array.isArray(jazzify())).toBe(true);
+    it("should return an array when passed in an array", function() {
+        expect(Array.isArray(jazzify([]))).toBe(true);
     });
     it("should return ['G7', 'F7', 'C7'] when passed ['G', 'F', 'C']", function() {
-        expect(jazzify(['G', 'F', 'C'])).toBe(['G7', 'F7', 'C7']);
+        expect(jazzify(['G', 'F', 'C'])).toEqual(['G7', 'F7', 'C7']);
     });
     it("should return ['Dm7', 'G7', 'E7', 'A7'] when passed ['Dm', 'G', 'E', 'A']", function() {
-        expect(jazzify(['Dm', 'G', 'E', 'A'])).toBe(['Dm7', 'G7', 'E7', 'A7']);
+        expect(jazzify(['Dm', 'G', 'E', 'A'])).toEqual(['Dm7', 'G7', 'E7', 'A7']);
     });
     it("should return ['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7'] when passed ['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7']", function() {
-        expect(jazzify(['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7'])).toBe(['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7']);
+        expect(jazzify(['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7'])).toEqual(['F7', 'E7', 'A7', 'Ab7', 'Gm7', 'C7']);
     });
     it("should return ['G7', 'C7'] when passed ['G', 'C7']", function() {
-        expect(jazzify(['G', 'C7'])).toBe(['G7', 'C7']);
+        expect(jazzify(['G', 'C7'])).toEqual(['G7', 'C7']);
     });
     it("should return [] when passed []", function() {
-        expect(jazzify([])).toBe([]);
+        expect(jazzify([])).toEqual([]);
     });
 })
 

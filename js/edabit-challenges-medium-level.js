@@ -202,9 +202,14 @@ Falsy values include false, 0, "" (empty string), null, undefined, and NaN; ever
 You will always be supplied with at least one parameter.
  */
 
-function allTruthy(...args) {
-    var array = [...args];
-    return !array.includes(false) && !array.includes(0) && !array.includes("") && !array.includes(null) && !array.includes(undefined) && !array.includes(NaN);
+function allTruthy(array) {
+    return array.every(function(element) {
+        if (array.includes(NaN)) {
+            return false;
+        } else {
+            return element !== false && element !== 0 && element !== "" && element !== null && element !== undefined;
+        }
+    });
 }
 
 
