@@ -190,6 +190,10 @@
     You will always be supplied with at least one parameter.
      */
 
+    function allTruthy(...args) {
+        var array = [...args];
+        return !array.includes(false) && !array.includes(0) && !array.includes("") && !array.includes(null) && !array.includes(undefined) && !array.includes(NaN);
+    }
 
 
     /*
