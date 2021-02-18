@@ -98,3 +98,29 @@ Test.assertEquals(isSpecialArray([2, 2, 2, 2]), false)
 Test.assertEquals(isSpecialArray([2, 1, 2, 1]), true)
 Test.assertEquals(isSpecialArray([4, 5, 6, 7]), true)
 Test.assertEquals(isSpecialArray([4, 5, 6, 7, 0, 5]), true)
+
+
+// Likes vs. Dislikes
+Test.assertEquals(likeOrDislike(['Dislike']), 'Dislike')
+Test.assertEquals(likeOrDislike(['Like', 'Like']), 'Nothing')
+Test.assertEquals(likeOrDislike(['Dislike', 'Dislike']), 'Nothing')
+Test.assertEquals(likeOrDislike(['Like', 'Like', 'Like']), 'Like')
+Test.assertEquals(likeOrDislike(['Like', 'Dislike']), 'Dislike')
+Test.assertEquals(likeOrDislike(['Dislike', 'Like']), 'Like')
+Test.assertEquals(likeOrDislike(['Like', 'Dislike', 'Dislike']), 'Nothing')
+Test.assertEquals(likeOrDislike(['Dislike', 'Like', 'Dislike']), 'Dislike')
+Test.assertEquals(likeOrDislike([]), 'Nothing')
+Test.assertEquals(likeOrDislike(['Like', 'Like', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike']), 'Dislike')
+Test.assertEquals(likeOrDislike(['Like', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Like', 'Like']), 'Like')
+Test.assertEquals(likeOrDislike(['Like', 'Like', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike', 'Dislike', 'Like', 'Like', 'Like', 'Like', 'Dislike', 'Dislike', 'Like', 'Like', 'Like', 'Dislike', 'Dislike']), 'Nothing')
+Test.assertEquals(likeOrDislike(['Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike', 'Like', 'Dislike','Like', 'Dislike', 'Like', 'Dislike']), 'Dislike')
+
+
+// Factor Chain
+Test.assertEquals(factorChain([1, 2, 4, 8, 16, 32]), true)
+Test.assertEquals(factorChain([1, 1, 1, 1, 1, 1]), true)
+Test.assertEquals(factorChain([2, 4, 6, 7, 12]), false)
+Test.assertEquals(factorChain([10, 1]), false)
+Test.assertEquals(factorChain([10, 20, 30, 40]), false)
+Test.assertEquals(factorChain([10, 20, 40]), true)
+Test.assertEquals(factorChain([1, 1, 1, 1, 7, 49]), true)
