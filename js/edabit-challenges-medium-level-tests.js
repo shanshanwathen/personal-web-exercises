@@ -105,10 +105,10 @@ describe('calculateLosses', function() {
 var random = Math.floor(Math.random() * 100);
 describe("count", function() {
     it("should be a defined function", function() {
-        expect(typeof(count)).toBe("function");
+        expect(typeof count).toBe("function");
     });
     it("should return a number when passed in a number", function() {
-        expect(typeof(count(random))).toBe("number");
+        expect(typeof count(random)).toBe("number");
     });
     it("should return 1 when passed 0", function() {
         expect(count(0)).toBe(1);
@@ -155,10 +155,10 @@ describe("count", function() {
 // Check if All Values Are True
 describe("allTruthy", function() {
     it("should be a defined function", function() {
-        expect(typeof(allTruthy)).toBe("function");
+        expect(typeof allTruthy).toBe("function");
     });
     it("should return a boolean value when passed in an array", function() {
-        expect(typeof(allTruthy([]))).toBe("boolean");
+        expect(typeof allTruthy([])).toBe("boolean");
     });
     it("should return true when passed [true, true, true]", function() {
         expect(allTruthy([true, true, true])).toBe(true);
@@ -224,13 +224,32 @@ describe("jazzify", function() {
 
 
 // Algebra Sequence — Boxes
-describe
-Test.assertEquals(boxSeq(5), 7)
-Test.assertEquals(boxSeq(0), 0)
-Test.assertEquals(boxSeq(6), 6)
-Test.assertEquals(boxSeq(99), 101)
-Test.assertEquals(boxSeq(2), 2)
-Test.assertEquals(boxSeq(1), 3)
+describe("boxSeq", function() {
+    it("should be a defined function", function() {
+        expect(typeof boxSeq).toBe("function");
+    });
+    it("should return a number when passed in a number", function() {
+        expect(typeof boxSeq(random)).toBe("number");
+    });
+    it("should return 7 when passed 5", function() {
+        expect(boxSeq(5)).toBe(7);
+    });
+    it("should return 0 when passed 0", function() {
+        expect(boxSeq(0)).toBe(0);
+    });
+    it("should return 6 when passed 6", function() {
+        expect(boxSeq(6)).toBe(6);
+    });
+    it("should return 101 when passed 99", function() {
+        expect(boxSeq(99)).toBe(101);
+    });
+    it("should return 2 when passed 2", function() {
+        expect(boxSeq(2)).toBe(2);
+    });
+    it("should return 3 when passed 1", function() {
+        expect(boxSeq(1)).toBe(3);
+    });
+})
 
 
 // Remove the Letters ABC
