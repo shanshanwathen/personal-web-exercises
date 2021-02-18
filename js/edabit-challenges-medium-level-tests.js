@@ -37,25 +37,25 @@ describe('arrayOfMultiples', function() {
         expect(Array.isArray(arrayOfMultiples())).toBe(true);
     });
     it('should return [7, 14, 21, 28, 35] when passed 7 and 5', function() {
-        expect(arrayOfMultiples(7,5)).toBe([7, 14, 21, 28, 35]);
+        expect(arrayOfMultiples(7,5)).toEqual([7, 14, 21, 28, 35]);
     });
     it('should return [12, 24, 36, 48, 60, 72, 84, 96, 108, 120] when passed 12 and 10', function() {
-        expect(arrayOfMultiples(12, 10)).toBe([12, 24, 36, 48, 60, 72, 84, 96, 108, 120]);
+        expect(arrayOfMultiples(12, 10)).toEqual([12, 24, 36, 48, 60, 72, 84, 96, 108, 120]);
     });
     it('should return [17, 34, 51, 68, 85, 102, 119] when passed 17 and 7', function() {
-        expect(arrayOfMultiples(17, 7)).toBe([17, 34, 51, 68, 85, 102, 119]);
+        expect(arrayOfMultiples(17, 7)).toEqual([17, 34, 51, 68, 85, 102, 119]);
     });
     it('should return [630, 1260, 1890, 2520, 3150, 3780, 4410, 5040, 5670, 6300, 6930, 7560, 8190, 8820] when passed 630 and 14', function() {
-        expect(arrayOfMultiples(630, 14)).toBe([630, 1260, 1890, 2520, 3150, 3780, 4410, 5040, 5670, 6300, 6930, 7560, 8190, 8820]);
+        expect(arrayOfMultiples(630, 14)).toEqual([630, 1260, 1890, 2520, 3150, 3780, 4410, 5040, 5670, 6300, 6930, 7560, 8190, 8820]);
     });
     it('should return [140, 280, 420] when passed 140 and 3', function() {
-        expect(arrayOfMultiples(140, 3)).toBe([140, 280, 420]);
+        expect(arrayOfMultiples(140, 3)).toEqual([140, 280, 420]);
     });
     it('should return [7, 14, 21, 28, 35, 42, 49, 56] when passed 7 and 8', function() {
-        expect(arrayOfMultiples(7, 8)).toBe([7, 14, 21, 28, 35, 42, 49, 56]);
+        expect(arrayOfMultiples(7, 8)).toEqual([7, 14, 21, 28, 35, 42, 49, 56]);
     });
     it('should return [11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220, 231] when passed 11 and 21', function() {
-        expect(arrayOfMultiples(11, 21)).toBe([11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220, 231]);
+        expect(arrayOfMultiples(11, 21)).toEqual([11, 22, 33, 44, 55, 66, 77, 88, 99, 110, 121, 132, 143, 154, 165, 176, 187, 198, 209, 220, 231]);
     });
 })
 
