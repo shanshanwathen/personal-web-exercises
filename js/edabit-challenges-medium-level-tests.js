@@ -358,10 +358,32 @@ describe("likeOrDislike", function() {
 
 
 // Factor Chain
-Test.assertEquals(factorChain([1, 2, 4, 8, 16, 32]), true)
-Test.assertEquals(factorChain([1, 1, 1, 1, 1, 1]), true)
-Test.assertEquals(factorChain([2, 4, 6, 7, 12]), false)
-Test.assertEquals(factorChain([10, 1]), false)
-Test.assertEquals(factorChain([10, 20, 30, 40]), false)
-Test.assertEquals(factorChain([10, 20, 40]), true)
-Test.assertEquals(factorChain([1, 1, 1, 1, 7, 49]), true)
+describe("factorChain", function() {
+    it("should be a defined function", function() {
+        expect(typeof factorChain).toBe("function");
+    });
+    it("should return a boolean value when passed in an array", function() {
+        expect(typeof factorChain([])).toBe("boolean");
+    });
+    it("should return true when passed in [1, 2, 4, 8, 16, 32]", function() {
+        expect(factorChain([1, 2, 4, 8, 16, 32])).toBe(true);
+    });
+    it("should return true when passed in [1, 1, 1, 1, 1, 1]", function() {
+        expect(factorChain([1, 1, 1, 1, 1, 1])).toBe(true);
+    });
+    it("should return false when passed in [2, 4, 6, 7, 12]", function() {
+        expect(factorChain([2, 4, 6, 7, 12])).toBe(false);
+    });
+    it("should return false when passed in [10, 1]", function() {
+        expect(factorChain([10, 1])).toBe(false);
+    });
+    it("should return false when passed in [10, 20, 30, 40]", function() {
+        expect(factorChain([10, 20, 30, 40])).toBe(false);
+    });
+    it("should return true when passed in [10, 20, 40]", function() {
+        expect(factorChain([10, 20, 40])).toBe(true);
+    });
+    it("should return true when passed in [1, 1, 1, 1, 7, 49]", function() {
+        expect(factorChain([1, 1, 1, 1, 7, 49])).toBe(true);
+    });
+})
