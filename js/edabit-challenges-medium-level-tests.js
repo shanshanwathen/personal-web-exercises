@@ -1,12 +1,31 @@
-
+// Tests for edabit challenges
 
 
 // Triangular Number Sequence
-Test.assertEquals(triangle(1), 1)
-Test.assertEquals(triangle(2), 3)
-Test.assertEquals(triangle(3), 6)
-Test.assertEquals(triangle(8), 36)
-Test.assertEquals(triangle(2153), 2318781)
+describe('triangle', function() {
+    it('should be a defined function', function() {
+        expect(typeof triangle).toBe('function');
+    });
+    it('should return a number when executed', function() {
+        expect(typeof triangle()).toBe('number');
+    });
+    it('should return 1 when passed 1', function() {
+        expect(triangle(1)).toBe(1);
+    });
+    it('should return 3 when passed 2', function() {
+        expect(triangle(2)).toBe(3);
+    });
+    it('should return 6 when passed 3', function() {
+        expect(triangle(3)).toBe(6);
+    });
+    it('should return 36 when passed 8', function() {
+        expect(triangle(8)).toBe(36);
+    });
+    it('should return 2318781 when passed 2153', function() {
+        expect(triangle(2153)).toBe(2318781);
+    });
+})
+
 
 
 // Array of Multiples
