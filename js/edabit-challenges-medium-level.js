@@ -464,3 +464,26 @@ function progressDays(runs) {
         return days;
     }
 }
+
+
+/*
+Purge and Organize
+
+Given an array of numbers, write a function that returns an array that...
+Has all duplicate elements removed.
+Is sorted from least to greatest value.
+Examples
+uniqueSort([1, 2, 4, 3]) ➞ [1, 2, 3, 4]
+uniqueSort([1, 4, 4, 4, 4, 4, 3, 2, 1, 2]) ➞ [1, 2, 3, 4]
+uniqueSort([6, 7, 3, 2, 1]) ➞ [1, 2, 3, 6, 7]
+ */
+
+function uniqueSort(arr) {
+    var newArray = [];
+    for (var i = 0; i < arr.length - 1; i++) {
+        if (arr[i + 1] !== arr [i]) {
+            newArray.push(arr[i]);
+        }
+    }
+    return newArray.sort();
+}

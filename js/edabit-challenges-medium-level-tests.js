@@ -413,3 +413,29 @@ describe("progressDays", function() {
         expect(progressDays([12, 11, 10, 12, 11, 13])).toBe(2);
     });
 })
+
+
+// Purge and Organize
+describe("uniqueSort", function () {
+    it("should be a defined function", function() {
+        expect(typeof uniqueSort).toBe("function");
+    });
+    it("should return an array when passed an array", function() {
+        expect(Array.isArray(uniqueSort([]))).toBe(true);
+    });
+    it("should return [1, 2, 3, 4, 5, 8, 10] when passed in [1, 5, 8, 2, 3, 4, 4, 4, 10]",  function() {
+        expect(uniqueSort([1, 5, 8, 2, 3, 4, 4, 4, 10])).toEqual([1, 2, 3, 4, 5, 8, 10]);
+    });
+    it("should return [1, 2, 4, 5, 7] when passed in [1, 2, 5, 4, 7, 7, 7]",  function() {
+        expect(uniqueSort([1, 2, 5, 4, 7, 7, 7])).toEqual([1, 2, 4, 5, 7]);
+    });
+    it("should return [0, 1, 2, 3, 4, 5, 6, 7] when passed in [7, 6, 5, 4, 3, 2, 1, 0, 1]",  function() {
+        expect(uniqueSort([7, 6, 5, 4, 3, 2, 1, 0, 1])).toEqual([0, 1, 2, 3, 4, 5, 6, 7]);
+    });
+    it("should return [1, 3, 4, 5, 6, 27, 100] when passed in [3, 6, 5, 4, 3, 27, 1, 100, 1]",  function() {
+        expect(uniqueSort([3, 6, 5, 4, 3, 27, 1, 100, 1])).toEqual([1, 3, 4, 5, 6, 27, 100]);
+    });
+    it("should return [-87, -9, -4.323827, -3.1415, -3.1414, 8] when passed in [-9, -3.1414, -87, 8, -4.323827, -3.1415, -3.1415]",  function() {
+        expect(uniqueSort([-9, -3.1414, -87, 8, -4.323827, -3.1415, -3.1415])).toEqual([-87, -9, -4.323827, -3.1415, -3.1414, 8]);
+    });
+});
