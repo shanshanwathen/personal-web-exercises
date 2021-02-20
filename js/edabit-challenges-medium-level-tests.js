@@ -387,3 +387,29 @@ describe("factorChain", function() {
         expect(factorChain([1, 1, 1, 1, 7, 49])).toBe(true);
     });
 })
+
+
+// Is Johnny Making Progress?
+describe("progressDays", function() {
+    it("should be a defined function", function() {
+        expect(typeof progressDays).toBe("function");
+    });
+    it("should return a number when passed in an array", function() {
+        expect(typeof progressDays([])).toBe("number");
+    });
+    it("should return 2 when passed in [3, 4, 1, 2]", function() {
+        expect(progressDays([3, 4, 1, 2])).toBe(2);
+    });
+    it("should return 3 when passed in [10, 11, 12, 9, 10]", function() {
+        expect(progressDays([10, 11, 12, 9, 10])).toBe(3);
+    });
+    it("should return 1 when passed in [6, 5, 4, 3, 2, 9]", function() {
+        expect(progressDays([6, 5, 4, 3, 2, 9])).toBe(1);
+    });
+    it("should return 0 when passed in [9, 9]", function() {
+        expect(progressDays([9, 9])).toBe(0);
+    });
+    it("should return 2 when passed in [12, 11, 10, 12, 11, 13]", function() {
+        expect(progressDays([12, 11, 10, 12, 11, 13])).toBe(2);
+    });
+})
