@@ -461,8 +461,8 @@ function progressDays(runs) {
         if (runs[i + 1] > runs[i]) {
             days += 1;
         }
-        return days;
     }
+    return days;
 }
 
 
