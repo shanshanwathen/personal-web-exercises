@@ -439,3 +439,137 @@ describe("uniqueSort", function () {
         expect(uniqueSort([-9, -3.1414, -87, 8, -4.323827, -3.1415, -3.1415])).toEqual([-87, -9, -4.323827, -3.1415, -3.1414, 8]);
     });
 });
+
+
+// Something in the Box?
+describe("inBox", function() {
+    it("should be a defined function", function() {
+        expect(typeof inBox).toBe("function");
+    });
+    it("should return a boolean value when passed in an array", function () {
+        expect(typeof inBox([])).toBe("boolean");
+    });
+    it("should return false when passed [\n" +
+        "\t\t\"###\", \n" +
+        "\t\t\"# #\", \n" +
+        "\t\t\"###\"\n" +
+        "\t]", function() {
+        expect(inBox([
+            "###",
+            "# #",
+            "###"
+        ])).toBe(false);
+    });
+    it("should return false when passed [\n" +
+        "\t\t\"####\", \n" +
+        "\t\t\"#  #\", \n" +
+        "\t\t\"#  #\", \n" +
+        "\t\t\"####\"\n" +
+        "\t]", function() {
+        expect(inBox([
+            "####",
+            "#  #",
+            "#  #",
+            "####"
+        ])).toBe(false);
+    });
+    it("should return false when passed in [\n" +
+        "\t\t\"#####\", \n" +
+        "\t\t\"#   #\", \n" +
+        "\t\t\"#   #\", \n" +
+        "\t\t\"#   #\", \n" +
+        "\t\t\"#####\"\n" +
+        "\t]", function() {
+        expect(inBox([
+            "#####",
+            "#   #",
+            "#   #",
+            "#   #",
+            "#####"
+        ])).toBe(false);
+    });
+    it("should return true when passed in [\n" +
+        "\t\t\"###\", \n" +
+        "\t\t\"#*#\", \n" +
+        "\t\t\"###\"\n" +
+        "\t]", function() {
+        expect(inBox([
+            "###",
+            "#*#",
+            "###"
+        ])).toBe(true);
+    });
+    it("should return true when passed [\n" +
+        "\t\t\"####\", \n" +
+        "\t\t\"# *#\", \n" +
+        "\t\t\"#  #\", \n" +
+        "\t\t\"####\"\n" +
+        "\t]", function() {
+        expect(inBox([
+            "####",
+            "# *#",
+            "#  #",
+            "####"
+        ])).toBe(true);
+    });
+    it("should return true when passed in [\n" +
+        "\t\t\"#####\", \n" +
+        "\t\t\"#  *#\", \n" +
+        "\t\t\"#   #\", \n" +
+        "\t\t\"#   #\", \n" +
+        "\t\t\"#####\"\n" +
+        "\t]", function() {
+        expect(inBox([
+            "#####",
+            "#  *#",
+            "#   #",
+            "#   #",
+            "#####"
+        ])).toBe(true);
+    });
+    it("should return true when passed in [\n" +
+        "\t\t\"#####\", \n" +
+        "\t\t\"#   #\", \n" +
+        "\t\t\"# * #\", \n" +
+        "\t\t\"#   #\", \n" +
+        "\t\t\"#####\"\n" +
+        "\t]", function() {
+        expect(inBox([
+            "#####",
+            "#   #",
+            "# * #",
+            "#   #",
+            "#####"
+        ])).toBe(true);
+    });
+    it("should return true when passed in [\n" +
+        "\t\t\"#####\", \n" +
+        "\t\t\"#   #\", \n" +
+        "\t\t\"#   #\", \n" +
+        "\t\t\"# * #\", \n" +
+        "\t\t\"#####\"\n" +
+        "\t]", function() {
+        expect(inBox([
+            "#####",
+            "#   #",
+            "#   #",
+            "# * #",
+            "#####"
+        ])).toBe(true);
+    });
+    it("should return true when passed in [\n" +
+        "\t\t\"#####\", \n" +
+        "\t\t\"#*  #\", \n" +
+        "\t\t\"#   #\", \n" +
+        "\t\t\"#   #\", \n" +
+        "\t\t\"#####\"\n" +
+        "\t]", function() {
+        expect(inBox([
+            "#####",
+            "#*  #",
+            "#   #",
+            "#   #",
+            "#####"
+        ])).toBe(true);
+    });
+})

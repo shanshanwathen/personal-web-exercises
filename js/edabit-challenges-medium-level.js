@@ -480,10 +480,54 @@ uniqueSort([6, 7, 3, 2, 1]) ➞ [1, 2, 3, 6, 7]
 
 function uniqueSort(arr) {
     var newArray = [];
-    for (var i = 0; i < arr.length - 1; i++) {
-        if (arr[i + 1] !== arr [i]) {
-            newArray.push(arr[i]);
+    arr.forEach(function(element) {
+        if (!newArray.includes(element)) {
+            newArray.push(element);
         }
-    }
-    return newArray.sort();
+    })
+    return newArray.sort(function(a, b) {
+        return a - b;
+    });
+}
+
+
+/*
+Something in the Box?
+
+Create a function that returns true if an asterisk * is inside a box.
+
+Examples
+inBox([
+  "###",
+  "#*#",
+  "###"
+]) ➞ true
+
+inBox([
+  "####",
+  "#* #",
+  "#  #",
+  "####"
+]) ➞ true
+
+inBox([
+  "*####",
+  "# #",
+  "#  #*",
+  "####"
+]) ➞ false
+
+inBox([
+  "#####",
+  "#   #",
+  "#   #",
+  "#   #",
+  "#####"
+]) ➞ false
+Notes
+The asterisk may be in the array, however, it must be inside the box, if it exists.
+ */
+
+function inBox(arr) {
+
 }
