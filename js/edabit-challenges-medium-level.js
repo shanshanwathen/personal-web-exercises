@@ -540,11 +540,8 @@ Create a function that takes a string as an argument and converts the first char
 
 Examples
 makeTitle("This is a title") ➞ "This Is A Title"
-
 makeTitle("capitalize every word") ➞ "Capitalize Every Word"
-
 makeTitle("I Like Pizza") ➞ "I Like Pizza"
-
 makeTitle("PIZZA PIZZA PIZZA") ➞ "PIZZA PIZZA PIZZA"
 Notes
 You can expect a valid string for each test case.
@@ -552,9 +549,33 @@ Some words may contain more than one uppercase letter (see example #4).
  */
 
 function makeTitle(str) {
-    var arr = str.split(" ");
-    for (var i = 0; i < arr.length; i++) {
-        arr[i].charAt(0).toUpperCase();
+    if (str === "") {
+        return "";
+    } else {
+        var arr = str.split(" ");
+        for (var i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+        }
+        return arr.join(" ");
     }
-    return arr.join(" ");
+}
+
+
+/*
+Find the Mean of All Digits
+
+Create a function that returns the mean of all digits.
+
+Examples
+mean(42) ➞ 3
+mean(12345) ➞ 3
+mean(666) ➞ 6
+Notes
+The mean of all digits is the sum of digits / how many digits there are (e.g. mean of digits in 512 is (5+1+2)/3(number of digits) = 8/3=2).
+The mean will always be an integer.
+ */
+
+function mean(num) {
+    var arr = num.toString().split();
+
 }
