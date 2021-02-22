@@ -681,3 +681,131 @@ describe("capMe", function() {
         expect(capMe(['mARIANN', 'jOI', 'gEORGEANN'])).toEqual(['Mariann', 'Joi', 'Georgeann']);
     });
 })
+
+
+// Iterated Square Root
+describe("iSqrt", function() {
+    it("should be a defined function", function() {
+        expect(typeof iSqrt).toBe("function");
+    });
+    it("should return 0 when passed 1", function() {
+        expect(iSqrt(1)).toBe(0);
+    });
+    it("should return 1 when passed 2", function() {
+        expect(iSqrt(2)).toBe(1);
+    });
+    it("should return 2 when passed 7", function() {
+        expect(iSqrt(7)).toBe(2);
+    });
+    it("should return 3 when passed 27", function() {
+        expect(iSqrt(27)).toBe(3);
+    });
+    it("should return 4 when passed 256", function() {
+        expect(iSqrt(256)).toBe(4);
+    });
+    it("should return 'invalid' when passed -1", function() {
+        expect(iSqrt(-1)).toBe("invalid");
+    });
+    it("should return 3 when passed 25", function() {
+        expect(iSqrt(25)).toBe(3);
+    });
+    it("should return 3 when passed 59", function() {
+        expect(iSqrt(59)).toBe(3);
+    });
+    it("should return 3 when passed 113", function() {
+        expect(iSqrt(113)).toBe(3);
+    });
+    it("should return 3 when passed 253", function() {
+        expect(iSqrt(253)).toBe(3);
+    });
+    it("should return 4 when passed 965", function() {
+        expect(iSqrt(965)).toBe(4);
+    });
+    it("should return 4 when passed 999", function() {
+        expect(iSqrt(999)).toBe(4);
+    });
+    it("should return 4 when passed 2746", function() {
+        expect(iSqrt(2746)).toBe(4);
+    });
+    it("should return 4 when passed 2872", function() {
+        expect(iSqrt(2872)).toBe(4);
+    });
+    it("should return 4 when passed 4069", function() {
+        expect(iSqrt(4069)).toBe(4);
+    });
+    it("should return 4 when passed 6575", function() {
+        expect(iSqrt(6575)).toBe(4);
+    });
+    it("should return 4 when passed 7985", function() {
+        expect(iSqrt(7985)).toBe(4);
+    });
+    it("should return 4 when passed 8385", function() {
+        expect(iSqrt(8385)).toBe(4);
+    });
+    it("should return 4 when passed 16943", function() {
+        expect(iSqrt(16943)).toBe(4);
+    });
+    it("should return 4 when passed 26749", function() {
+        expect(iSqrt(26749)).toBe(4);
+    });
+    it("should return 4 when passed 34665", function() {
+        expect(iSqrt(34665)).toBe(4);
+    });
+    it("should return 4 when passed 44591", function() {
+        expect(iSqrt(44591)).toBe(4);
+    });
+    it("should return 4 when passed 50320", function() {
+        expect(iSqrt(50320)).toBe(4);
+    });
+    it("should return 5 when passed 66343", function() {
+        expect(iSqrt(66343)).toBe(5);
+    });
+    it("should return 5 when passed 69420", function() {
+        expect(iSqrt(69420)).toBe(5);
+    });
+    it("should return 5 when passed 77632", function() {
+        expect(iSqrt(77632)).toBe(5);
+    });
+    it("should return 5 when passed 97197", function() {
+        expect(iSqrt(97197)).toBe(5);
+    });
+    it("should return 5 when passed 108787", function() {
+        expect(iSqrt(108787)).toBe(5);
+    });
+    it("should return 5 when passed 229276", function() {
+        expect(iSqrt(229276)).toBe(5);
+    });
+    it("should return 5 when passed 319228", function() {
+        expect(iSqrt(319228)).toBe(5);
+    });
+    it("should return 5 when passed 426748", function() {
+        expect(iSqrt(426748)).toBe(5);
+    });
+    it("should return 5 when passed 595996", function() {
+        expect(iSqrt(595996)).toBe(5);
+    });
+    it("should return 5 when passed 652940", function() {
+        expect(iSqrt(652940)).toBe(5);
+    });
+    it("should return 5 when passed 709442", function() {
+        expect(iSqrt(709442)).toBe(5);
+    });
+    it("should return 5 when passed 881414", function() {
+        expect(iSqrt(881414)).toBe(5);
+    });
+    it("should return 5 when passed 954281", function() {
+        expect(iSqrt(954281)).toBe(5);
+    });
+    it("should return 6 when passed 4294967296", function() {
+        expect(iSqrt(4294967296)).toBe(6);
+    });
+    it("should return 6 when passed 9852481428", function() {
+        expect(iSqrt(9852481428)).toBe(6);
+    });
+    it("should return 'invalid' when passed -198329", function() {
+        expect(iSqrt(-198329)).toBe("invalid");
+    });
+    it("should return 'invalid' when passed -928437002", function() {
+        expect(iSqrt(-928437002)).toBe("invalid");
+    });
+})

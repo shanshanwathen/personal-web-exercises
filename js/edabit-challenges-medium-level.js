@@ -541,6 +541,7 @@ function inBox(arr) {
 }
 
 
+
 /*
 Capitalize the First Letter of Each Word
 
@@ -614,4 +615,36 @@ function capMe(arr) {
         arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1).toLowerCase();
     }
     return arr;
+}
+
+
+/*
+Iterated Square Root
+
+The iterated square root of a number is the number of times the square root function must be applied to bring the number strictly under 2.
+
+Given an integer, return its iterated square root. Return "invalid" if it is negative.
+
+Examples
+iSqrt(1) ➞ 0
+iSqrt(2) ➞ 1
+iSqrt(7) ➞ 2
+iSqrt(27) ➞ 3
+iSqrt(256) ➞ 4
+iSqrt(-1) ➞ "invalid"
+Notes
+Idea for iterated square root by Richard Spence.
+ */
+
+function iSqrt(number) {
+    var count = 0;
+    if (number < 0) {
+        return "invalid";
+    } else {
+        while (number >= 2) {
+            number = Math.sqrt(number);
+            count++;
+        }
+        return count;
+    }
 }
