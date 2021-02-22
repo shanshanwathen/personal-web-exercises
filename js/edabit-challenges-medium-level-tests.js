@@ -649,3 +649,35 @@ describe("mean", function() {
         expect(mean(12345)).toBe(3);
     });
 })
+
+
+// Capitalize the Names
+describe("capMe", function() {
+    it("should be a defined function", function() {
+        expect(typeof capMe).toBe("function");
+    });
+    it("should return an array when passed in an array", function() {
+        expect(Array.isArray(capMe([]))).toBe(true);
+    });
+    it("should return ['Mavis', 'Senaida', 'Letty'] when passed in ['mavis', 'senaida', 'letty']", function() {
+        expect(capMe(['mavis', 'senaida', 'letty'])).toEqual(['Mavis', 'Senaida', 'Letty']);
+    });
+    it("should return ['Samuel', 'Mabelle', 'Letitia', 'Meridith'] when passed in ['samuel', 'MABELLE', 'letitia', 'meridith']", function() {
+        expect(capMe(['samuel', 'MABELLE', 'letitia', 'meridith'])).toEqual(['Samuel', 'Mabelle', 'Letitia', 'Meridith']);
+    });
+    it("should return ['Slyvia', 'Kristal', 'Sharilyn', 'Calista'] when passed in ['Slyvia', 'Kristal', 'Sharilyn', 'Calista']", function() {
+        expect(capMe(['Slyvia', 'Kristal', 'Sharilyn', 'Calista'])).toEqual(['Slyvia', 'Kristal', 'Sharilyn', 'Calista']);
+    });
+    it("should return ['Kristopher', 'Oliva', 'Herminia'] when passed in ['krisTopher', 'olIva', 'herminiA']", function() {
+        expect(capMe(['krisTopher', 'olIva', 'herminiA'])).toEqual(['Kristopher', 'Oliva', 'Herminia']);
+    });
+    it("should return ['Luke', 'Marsha', 'Stanford'] when passed in ['luke', 'marsha', 'stanford']", function() {
+        expect(capMe(['luke', 'marsha', 'stanford'])).toEqual(['Luke', 'Marsha', 'Stanford']);
+    });
+    it("should return ['Kara'] when passed in ['kara']", function() {
+        expect(capMe(['kara'])).toEqual(['Kara']);
+    });
+    it("should return ['Mariann', 'Joi', 'Georgeann'] when passed in ['mARIANN', 'jOI', 'gEORGEANN']", function() {
+        expect(capMe(['mARIANN', 'jOI', 'gEORGEANN'])).toEqual(['Mariann', 'Joi', 'Georgeann']);
+    });
+})
