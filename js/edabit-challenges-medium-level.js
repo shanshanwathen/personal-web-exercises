@@ -576,6 +576,10 @@ The mean will always be an integer.
  */
 
 function mean(num) {
-    var arr = num.toString().split();
-
+    var arr = num.toString().split("");
+    var sum = 0;
+    arr.every(function(element) {
+        return sum = sum + Number(element);
+    });
+    return sum / arr.length;
 }

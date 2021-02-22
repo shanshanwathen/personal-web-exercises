@@ -617,3 +617,35 @@ describe("makeTitle", function() {
         expect(makeTitle("PIZZA PIZZA PIZZA")).toBe("PIZZA PIZZA PIZZA");
     });
 })
+
+
+// Find the Mean of All Digits
+describe("mean", function() {
+    it("should be a defined function", function() {
+        expect(typeof mean).toBe("function");
+    });
+    it("should return a number when passed in a number", function() {
+        expect(typeof mean(random)).toBe("number");
+    });
+    it("should return 6 when passed in 666", function() {
+        expect(mean(666)).toBe(6);
+    });
+    it("should return 4 when passed in 80", function() {
+        expect(mean(80)).toBe(4);
+    });
+    it("should return 8 when passed in 789", function() {
+        expect(mean(789)).toBe(8);
+    });
+    it("should return 4 when passed in 417", function() {
+        expect(mean(417)).toBe(4);
+    });
+    it("should return 4 when passed in 1357", function() {
+        expect(mean(1357)).toBe(4);
+    });
+    it("should return 3 when passed in 42", function() {
+        expect(mean(42)).toBe(3);
+    });
+    it("should return 3 when passed in 12345", function() {
+        expect(mean(12345)).toBe(3);
+    });
+})
