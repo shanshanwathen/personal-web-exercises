@@ -529,7 +529,15 @@ The asterisk may be in the array, however, it must be inside the box, if it exis
  */
 
 function inBox(arr) {
-
+    var asterisk = false;
+    if (arr[0] === arr[arr.length - 1]) {
+        for (var i = 1; i < arr.length - 1; i++) {
+            if (arr[i].length === arr[0].length && arr[i].charAt(0) === "#" && arr[i].charAt(arr[i].length - 1) === "#" && arr[i].includes("*")) {
+                asterisk = true;
+            }
+        }
+    }
+    return asterisk;
 }
 
 
