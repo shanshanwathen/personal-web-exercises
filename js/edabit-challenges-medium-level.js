@@ -648,3 +648,47 @@ function iSqrt(number) {
         return count;
     }
 }
+
+
+/*
+Neutralisation
+
+Given two strings comprised of + and -, return a new string which shows how the two strings interact in the following way:
+
+When positives and positives interact, they remain positive.
+When negatives and negatives interact, they remain negative.
+But when negatives and positives interact, they become neutral, and are shown as the number 0.
+Worked Example
+neutralise("+-+", "+--") ➞ "+-0"
+// Compare the first characters of each string, then the next in turn.
+// "+" against a "+" returns another "+".
+// "-" against a "-" returns another "-".
+// "+" against a "-" returns "0".
+// Return the string of characters.
+Examples
+neutralise("--++--", "++--++") ➞ "000000"
+neutralise("-+-+-+", "-+-+-+") ➞ "-+-+-+"
+neutralise("-++-", "-+-+") ➞ "-+00"
+Notes
+The two strings will be the same length.
+ */
+
+
+
+/*
+Burglary Series (04): Add its Name
+
+Given three arguments (an object obj of the stolen items, the pets name and a value) return an object with that name and value in it (as key-value pairs).
+
+Examples
+addName({}, "Brutus", 300) ➞ { Brutus: 300 }
+addName({ piano: 500 }, "Brutus", 400) ➞ { piano: 500, Brutus: 400 }
+addName({ piano: 500, stereo: 300 }, "Caligula", 440) ➞ { piano: 500, stereo: 300, Caligula: 440 }
+Notes
+The value argument will be a number.
+ */
+
+function addName(obj, name, value) {
+    Object.assign(obj, {[name]: value});
+    return obj;
+}

@@ -809,3 +809,25 @@ describe("iSqrt", function() {
         expect(iSqrt(-928437002)).toBe("invalid");
     });
 })
+
+
+// Neutralisation
+
+
+
+
+// Burglary Series (04): Add its Name
+describe("addName", function() {
+    it("should be a defined function", function() {
+        expect(typeof addName).toBe("function");
+    });
+    it("should return {Brutus: 300} when passed in {}, \"Brutus\", 300)", function() {
+        expect(addName({}, "Brutus", 300)).toEqual({Brutus: 300});
+    });
+    it("should return {piano: 500, Brutus: 400} when passed in {piano: 500}, \"Brutus\", 400", function() {
+        expect(addName({piano: 500}, "Brutus", 400)).toEqual({piano: 500, Brutus: 400});
+    });
+    it("should return {piano: 500,  stereo: 300, Caligula: 440} when passed in {piano: 500, stereo: 300}, \"Caligula\", 440", function() {
+        expect(addName({piano: 500, stereo: 300}, "Caligula", 440)).toEqual({piano: 500,  stereo: 300, Caligula: 440});
+    });
+})
