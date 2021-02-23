@@ -688,7 +688,12 @@ Notes
 The value argument will be a number.
  */
 
+// function addName(obj, name, value) {
+//     Object.assign(obj, {[name]: value});
+//     return obj;
+// }
+
 function addName(obj, name, value) {
-    Object.assign(obj, {[name]: value});
+    obj[name] = value;
     return obj;
 }
