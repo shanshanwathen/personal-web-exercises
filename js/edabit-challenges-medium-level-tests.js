@@ -831,3 +831,26 @@ describe("addName", function() {
         expect(addName({piano: 500, stereo: 300}, "Caligula", 440)).toEqual({piano: 500,  stereo: 300, Caligula: 440});
     });
 })
+
+
+// Converting Objects to Arrays
+describe("toArray", function() {
+    it("should be a defined function", function() {
+        expect(typeof toArray).toBe("function");
+    });
+    it("should return an array when executed", function() {
+        expect(Array.isArray(toArray({}))).toBe(true);
+    });
+    it("should return an empty array when passed an empty object", function() {
+        expect(toArray({})).toEqual([]);
+    });
+    it("should return [[\"a\", 1], [\"b\", 2]] when passed in { a: 1, b: 2 }", function() {
+        expect(toArray({ a: 1, b: 2 })).toEqual([["a", 1], ["b", 2]]);
+    });
+    it("should return [[\"foo\", 33], [\"bar\", 45], [\"baz\", 67]] when passed in { foo: 33, bar: 45, baz: 67 }", function() {
+        expect(toArray({ foo: 33, bar: 45, baz: 67 })).toEqual([["foo", 33], ["bar", 45], ["baz", 67]]);
+    });
+    it("should return [[\"shrimp\", 15], [\"tots\", 12]] when passed in { shrimp: 15, tots: 12 }", function() {
+        expect(toArray({ shrimp: 15, tots: 12 })).toEqual([["shrimp", 15], ["tots", 12]]);
+    });
+})
