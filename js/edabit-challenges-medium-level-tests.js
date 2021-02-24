@@ -880,3 +880,35 @@ describe("concat", function() {
         expect(concat(['a'], ['b', 'c'])).toEqual(['a', 'b', 'c']);
     });
 })
+
+
+// Convenience Store
+describe("changeEnough", function() {
+    it("should be a defined function", function() {
+        expect(typeof changeEnough).toBe("function");
+    });
+    it("should return a boolean value when executed", function() {
+        expect(typeof changeEnough([0, 0, 0, 0], random)).toBe("boolean");
+    });
+    it("should return false when passed in [2, 100, 0, 0], 14.11", function() {
+        expect(changeEnough([2, 100, 0, 0], 14.11)).toBe(false);
+    });
+    it("should return true when passed in [0, 0, 20, 5], 0.75", function() {
+        expect(changeEnough([0, 0, 20, 5], 0.75)).toBe(true);
+    });
+    it("should return true when passed in [30, 40, 20, 5], 12.55", function() {
+        expect(changeEnough([30, 40, 20, 5], 12.55)).toBe(true);
+    });
+    it("should return false when passed in [10, 0, 0, 50], 13.85", function() {
+        expect(changeEnough([10, 0, 0, 50], 13.85)).toBe(false);
+    });
+    it("should return false when passed in [1, 0, 5, 219], 19.99", function() {
+        expect(changeEnough([1, 0, 5, 219], 19.99)).toBe(false);
+    });
+    it("should return true when passed in [1, 0, 2555, 219], 127.75", function() {
+        expect(changeEnough([1, 0, 2555, 219], 127.75)).toBe(true);
+    });
+    it("should return true when passed in [1, 335, 0, 219], 35.21", function() {
+        expect(changeEnough([1, 335, 0, 219], 35.21)).toBe(true);
+    });
+})
