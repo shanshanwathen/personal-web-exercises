@@ -715,3 +715,24 @@ Return an empty array if the object is empty.
 function toArray(obj) {
     return Object.entries(obj);
 }
+
+
+/*
+Concatenate Variable Number of Input Arrays
+
+Create a function that concatenates n input arrays, where n is variable.
+
+Examples
+concat([1, 2, 3], [4, 5], [6, 7]) ➞ [1, 2, 3, 4, 5, 6, 7]
+concat([1], [2], [3], [4], [5], [6], [7]) ➞ [1, 2, 3, 4, 5, 6, 7]
+concat([1, 2], [3, 4]) ➞ [1, 2, 3, 4]
+concat([4, 4, 4, 4, 4]) ➞ [4, 4, 4, 4, 4]
+*/
+
+function concat(...args) {
+    var inputs = Array.from(args);
+    return inputs.reduce(function(acc, cur) {
+        return acc.concat(cur);
+    });
+}
+

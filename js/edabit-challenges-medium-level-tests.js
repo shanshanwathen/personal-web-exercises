@@ -854,3 +854,29 @@ describe("toArray", function() {
         expect(toArray({ shrimp: 15, tots: 12 })).toEqual([["shrimp", 15], ["tots", 12]]);
     });
 })
+
+
+// Concatenate Variable Number of Input Arrays
+describe("concat", function() {
+    it("should be a defined function", function() {
+        expect(typeof concat).toBe("function");
+    });
+    it("should return an array when executed", function() {
+        expect(Array.isArray(concat([]))).toBe(true);
+    });
+    it("should return [1, 2, 3, 4, 5, 6, 7] if passed in [1, 2, 3], [4, 5], [6, 7]", function() {
+        expect(concat([1, 2, 3], [4, 5], [6, 7])).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    });
+    it("should return [1, 2, 3, 4, 5, 6, 7] if passed in [1], [2], [3], [4], [5], [6], [7]", function() {
+        expect(concat([1], [2], [3], [4], [5], [6], [7])).toEqual([1, 2, 3, 4, 5, 6, 7]);
+    });
+    it("should return [1, 2, 3, 4] if passed in [1, 2], [3, 4]", function() {
+        expect(concat([1, 2], [3, 4])).toEqual([1, 2, 3, 4]);
+    });
+    it("should return [4, 4, 4, 4, 4] if passed in [4, 4, 4, 4, 4]", function() {
+        expect(concat([4, 4, 4, 4, 4])).toEqual([4, 4, 4, 4, 4]);
+    });
+    it("should return ['a', 'b', 'c'] if passed in ['a'], ['b', 'c']", function() {
+        expect(concat(['a'], ['b', 'c'])).toEqual(['a', 'b', 'c']);
+    });
+})
