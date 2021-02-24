@@ -912,3 +912,36 @@ describe("changeEnough", function() {
         expect(changeEnough([1, 335, 0, 219], 35.21)).toBe(true);
     });
 })
+
+
+// Convert Key, Values in an Object to Array
+describe("objectToArray", function() {
+    it("should be a defined function", function() {
+        expect(typeof objectToArray).toBe("function");
+    });
+    it("should return an array when passed in an object", function() {
+        expect(Array.isArray(objectToArray({}))).toBe(true);
+    });
+    it("should return [[\"D\", 1], [\"B\", 2], [\"C\", 3]] when passed in {\n" +
+        "\tD: 1, \n" +
+        "  B: 2, \n" +
+        "  C: 3\n" +
+        "}", function() {
+        expect(objectToArray({
+            D: 1,
+            B: 2,
+            C: 3
+        })).toEqual([["D", 1], ["B", 2], ["C", 3]]);
+    });
+    it("should return [[\"likes\", 2], [\"dislikes\", 3], [\"followers\", 10]] when passed in {\n" +
+        "\tlikes: 2, \n" +
+        "  dislikes: 3, \n" +
+        "  followers: 10\n" +
+        "}", function() {
+        expect(objectToArray({
+            likes: 2,
+            dislikes: 3,
+            followers: 10
+        })).toEqual([["likes", 2], ["dislikes", 3], ["followers", 10]]);
+    });
+})
