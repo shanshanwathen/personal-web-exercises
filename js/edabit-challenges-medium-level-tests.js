@@ -945,3 +945,35 @@ describe("objectToArray", function() {
         })).toEqual([["likes", 2], ["dislikes", 3], ["followers", 10]]);
     });
 })
+
+
+// Sort the Unsortable
+describe("sortIt", function() {
+    it("should be a defined function", function() {
+        expect(typeof sortIt).toBe("function");
+    });
+    it("should return an array when executed", function() {
+        expect(Array.isArray(sortIt([]))).toBe(true);
+    });
+    it("should return [1, 3, 4] when passed in [4, 1, 3]", function() {
+        expect(sortIt([4, 1, 3])).toEqual([1, 3, 4]);
+    });
+    it("should return [[1], [3], [4]] when passed in [[4], [1], [3]]", function() {
+        expect(sortIt([[4], [1], [3]])).toEqual([[1], [3], [4]]);
+    });
+    it("should return [[1], 3, 4] when passed in [4, [1], 3]", function() {
+        expect(sortIt([4, [1], 3])).toEqual([[1], 3, 4]);
+    });
+    it("should return [1, [3], [4]] when passed in [[4], 1, [3]]", function() {
+        expect(sortIt([[4], 1, [3]])).toEqual([1, [3], [4]]);
+    });
+    it("should return [1, [2], [3], 4, [5], 6] when passed in [[3], 4, [2], [5], 1, 6]", function() {
+        expect(sortIt([[3], 4, [2], [5], 1, 6])).toEqual([1, [2], [3], 4, [5], 6]);
+    });
+    it("should return [1, [3], [5], 6, 7, [9]] when passed in [[3], 7, [9], [5], 1, 6]", function() {
+        expect(sortIt([[3], 7, [9], [5], 1, 6])).toEqual([1, [3], [5], 6, 7, [9]]);
+    });
+    it("should return [[0], 1, [3], [5], 6, 7, [9] when passed in [[3], 7, [9], [5], 1, 6, [0]]", function() {
+        expect(sortIt([[3], 7, [9], [5], 1, 6, [0]])).toEqual([[0], 1, [3], [5], 6, 7, [9]]);
+    });
+})
