@@ -987,11 +987,14 @@ describe("findNemo", function() {
     it("should return a string when passed in a string", function() {
         expect(typeof findNemo("")).toBe("string");
     });
-    it("should return 'I found Nemo at 5!' when passed in 'I am Ne mo Nemo!'", function() {
-        expect(findNemo("I am Ne mo Nemo!")).toBe("I found Nemo at 5!");
+    it("should return 'I can\'t find Nemo :(' when passed in an empty string", function() {
+        expect(findNemo("")).toBe("I can't find Nemo :(");
     });
-    it("should return 'I found Nemo at 8!' when passed in 'N e m o is NEMO NeMo Nemo!'", function() {
-        expect(findNemo("N e m o is NEMO NeMo Nemo!")).toBe("I found Nemo at 8!");
+    it("should return 'I found Nemo at 5!' when passed in 'I am Ne mo Nemo !'", function() {
+        expect(findNemo("I am Ne mo Nemo !")).toBe("I found Nemo at 5!");
+    });
+    it("should return 'I found Nemo at 8!' when passed in 'N e m o is NEMO NeMo Nemo !'", function() {
+        expect(findNemo("N e m o is NEMO NeMo Nemo !")).toBe("I found Nemo at 8!");
     });
     it("should return 'I found Nemo at 5!' when passed in 'I am Nemo's dad Nemo senior.'", function() {
         expect(findNemo("I am Nemo's dad Nemo senior.")).toBe("I found Nemo at 5!");

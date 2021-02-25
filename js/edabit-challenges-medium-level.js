@@ -838,14 +838,22 @@ Nemo's, or anything that says Nemo with something behind it, doesn't count as Fi
 If there are multiple Nemo's in the sentence, only return for the first one.
  */
 
+// function findNemo(sentence) {
+//     var arr = sentence.split(" ");
+//     for (var i = 0; i < arr.length; i++) {
+//         if (arr[i] === "Nemo") {
+//             return "I found Nemo at " + (i + 1) + "!";
+//         }
+//     }
+//     return "I can't find Nemo :(";
+// }
+
 function findNemo(sentence) {
-    var arr = sentence.split(" ");
-    return arr.reduce(function(acc, element, index) {
-        if (element === "Nemo") {
-            acc = index + 1;
-            return acc;
-        } else {
-            return "I can't find Nemo :("
-        }
-    });
+    var words = sentence.split(" ");
+    console.log(words);
+    if (words. includes("Nemo")) {
+        return "I found Nemo at " + (words.indexOf("Nemo") + 1) + "!";
+    } else {
+        return "I can't find Nemo :(";
+    }
 }
