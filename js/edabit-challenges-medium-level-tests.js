@@ -977,3 +977,32 @@ describe("sortIt", function() {
         expect(sortIt([[3], 7, [9], [5], 1, 6, [0]])).toEqual([[0], 1, [3], [5], 6, 7, [9]]);
     });
 })
+
+
+// Finding Nemo
+describe("findNemo", function() {
+    it("should be a defined function", function() {
+        expect(typeof findNemo).toBe("function");
+    });
+    it("should return a string when passed in a string", function() {
+        expect(typeof findNemo("")).toBe("string");
+    });
+    it("should return 'I found Nemo at 5!' when passed in 'I am Ne mo Nemo!'", function() {
+        expect(findNemo("I am Ne mo Nemo!")).toBe("I found Nemo at 5!");
+    });
+    it("should return 'I found Nemo at 8!' when passed in 'N e m o is NEMO NeMo Nemo!'", function() {
+        expect(findNemo("N e m o is NEMO NeMo Nemo!")).toBe("I found Nemo at 8!");
+    });
+    it("should return 'I found Nemo at 5!' when passed in 'I am Nemo's dad Nemo senior.'", function() {
+        expect(findNemo("I am Nemo's dad Nemo senior.")).toBe("I found Nemo at 5!");
+    });
+    it("should return 'I can\'t find Nemo :(' when passed in 'Oh, hello!'", function() {
+        expect(findNemo("Oh, hello!")).toBe("I can't find Nemo :(");
+    });
+    it("should return 'I can\'t find Nemo :(' when passed in 'Is it Nemos, Nemona, Nemoor or Garfield?'", function() {
+        expect(findNemo("Is it Nemos, Nemona, Nemoor or Garfield?")).toBe("I can't find Nemo :(");
+    });
+    it("should return 'I found Nemo at 1!' when passed in 'Nemo is a clown fish, he has white and orange stripes. Nemo , come back!'", function() {
+        expect(findNemo("Nemo is a clown fish, he has white and orange stripes. Nemo , come back!")).toBe("I found Nemo at 1!");
+    });
+})
