@@ -944,3 +944,34 @@ Hyphenated words are considered separate words.
 Be careful with words that contain and, the, of or in.
 See the Resources tab for more info on the various JavaScript string methods.
  */
+
+function correctTitle(string) {
+    var words = string.split(" ");
+    var exceptions = ["and", "the", "of", "in"];
+    var wordsArray = [];
+    var subArray = [];
+    function capitalize(word) {
+        if (exceptions.includes(word.toLowerCase())) {
+            word = word.toLowerCase();
+        } else {
+            word = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        }
+        subArray.push(word);
+        return subArray;
+    }
+    words.forEach(function(word) {
+        if (exceptions.includes(word.toLowerCase())) {
+            word = word.toLowerCase();
+        } else {
+            if(!word.includes("-")) {
+                word = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+            } else {
+                word.split("-").forEach(capitalize);
+                word = subArray.join("-");
+            }
+        }
+        wordsArray.push(word);
+        return wordsArray;
+    });
+    return wordsArray.join(" ");
+}
