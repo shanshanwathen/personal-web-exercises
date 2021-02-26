@@ -1079,3 +1079,53 @@ describe("reverseOdd", function() {
 
 
 // Game of Thrones: Character Titles
+describe("correctTitle",  function() {
+    it("should be a defined function", function() {
+        expect(typeof correctTitle).toBe("function");
+    });
+    it("should return a string when executed", function() {
+        expect(typeof correctTitle("")).toBe("string");
+    });
+    it("should return 'Sansa Stark, Lady of Winterfell.' when passed in 'sansa stark, lady of winterfell.'", function() {
+        expect(correctTitle("sansa stark, lady of winterfell.")).toBe("Sansa Stark, Lady of Winterfell.");
+    });
+    it("should return 'Lord Eddard Stark, Hand of the King.' when passed in 'lord eddard stark, hand of the king.'", function() {
+        expect(correctTitle("lord eddard stark, hand of the king.")).toBe("Lord Eddard Stark, Hand of the King.");
+    });
+    it("should return 'Jaime Lannister, Lord Commander of the Kingsguard.' when passed in 'jaime lannister, lord commander of the kingsguard.'", function() {
+        expect(correctTitle("jaime lannister, lord commander of the kingsguard.")).toBe("Jaime Lannister, Lord Commander of the Kingsguard.");
+    });
+    it("should return 'Varys, Master of Whisperers.' when passed in 'varys, master of whisperers.'", function() {
+        expect(correctTitle("varys, master of whisperers.")).toBe("Varys, Master of Whisperers.");
+    });
+    it("should return 'Doran Martell, Prince of Dorne, Lord of Sunspear.' when passed in 'doran martell, prince of dorne, lord of sunspear.'", function() {
+        expect(correctTitle("doran martell, prince of dorne, lord of sunspear.")).toBe("Doran Martell, Prince of Dorne, Lord of Sunspear.");
+    });
+    it("should return 'Tyrion Lannister, Hand of the Queen.' when passed in 'TYRION LANNISTER, HAND OF THE QUEEN.'", function() {
+        expect(correctTitle("TYRION LANNISTER, HAND OF THE QUEEN.")).toBe("Tyrion Lannister, Hand of the Queen.");
+    });
+    it("should return 'Grand Maester Pycelle.' when passed in 'GRAND MAESTER PYCELLE.'", function() {
+        expect(correctTitle("GRAND MAESTER PYCELLE.")).toBe("Grand Maester Pycelle.");
+    });
+    it("should return 'Euron Greyjoy, King of the Iron Islands, Lord Reaper of Pyke.' when passed in 'EURON GREYJOY, KING OF THE IRON ISLANDS, LORD REAPER OF PYKE.'", function() {
+        expect(correctTitle("EURON GREYJOY, KING OF THE IRON ISLANDS, LORD REAPER OF PYKE.")).toBe("Euron Greyjoy, King of the Iron Islands, Lord Reaper of Pyke.");
+    });
+    it("should return 'Petyr Baelish, Lord Protector of the Vale.' when passed in 'PETYR BAELISH, LORD PROTECTOR OF THE VALE.'", function() {
+        expect(correctTitle("PETYR BAELISH, LORD PROTECTOR OF THE VALE.")).toBe("Petyr Baelish, Lord Protector of the Vale.");
+    });
+    it("should return 'Mance Rayder, King-Beyond-the-Wall.' when passed in 'MANCE RAYDER, KING-BEYOND-THE-WALL.'", function() {
+        expect(correctTitle("MANCE RAYDER, KING-BEYOND-THE-WALL.")).toBe("Mance Rayder, King-Beyond-the-Wall.");
+    });
+    it("should return 'Jon Snow, King in the North.' when passed in 'jOn SnoW, kINg IN thE noRth.'", function() {
+        expect(correctTitle("jOn SnoW, kINg IN thE noRth.")).toBe("Jon Snow, King in the North.");
+    });
+    it("should return 'Jeor Mormont, Lord Commander of the Night's Watch.' when passed in 'Jeor MORMONT, Lord COMMANDER of the NIGHT'S WATCH.'", function() {
+        expect(correctTitle("Jeor MORMONT, Lord COMMANDER of the NIGHT'S WATCH.")).toBe("Jeor Mormont, Lord Commander of the Night's Watch.");
+    });
+    it("should return 'Cersei Lannister, Queen of the Andals and the First Men, Protector of the Seven Kingdoms.' when passed in 'cERSei LANnIStEr, QuEEn Of the aNdals and THE fIRSt men, PROtecTOR OF tHe SEVEN KInGdOmS.'", function() {
+        expect(correctTitle("cERSei LANnIStEr, QuEEn Of the aNdals and THE fIRSt men, PROtecTOR OF tHe SEVEN KInGdOmS.")).toBe("Cersei Lannister, Queen of the Andals and the First Men, Protector of the Seven Kingdoms.");
+    });
+    it("should return 'Daenerys Stormborn of House Targaryen, the First of Her Name, Queen of the Andals and the First Men, Protector of the Seven Kingdoms, the Mother of Dragons, the Khaleesi of the Great Grass Sea, the Unburnt, the Breaker of Chains.' when passed in 'DAeneRYS StOrmboRn oF hOuse TARGARYEn, ThE FirsT OF HER naMe, QUeEn OF The ANdAlS And THe FirsT mEN, PROtECtOr Of tHE SEven KinGDOmS, The MoTHeR of DrAGONS, thE KhALeEsi oF THE GReAt gRAss sEa, The UnburNT, The BReakEr of cHAInS.'", function() {
+        expect(correctTitle("DAeneRYS StOrmboRn oF hOuse TARGARYEn, ThE FirsT OF HER naMe, QUeEn OF The ANdAlS And THe FirsT mEN, PROtECtOr Of tHE SEven KinGDOmS, The MoTHeR of DrAGONS, thE KhALeEsi oF THE GReAt gRAss sEa, The UnburNT, The BReakEr of cHAInS.")).toBe("Daenerys Stormborn of House Targaryen, the First of Her Name, Queen of the Andals and the First Men, Protector of the Seven Kingdoms, the Mother of Dragons, the Khaleesi of the Great Grass Sea, the Unburnt, the Breaker of Chains.");
+    });
+})
