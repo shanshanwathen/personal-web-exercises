@@ -1129,3 +1129,28 @@ describe("correctTitle",  function() {
         expect(correctTitle("DAeneRYS StOrmboRn oF hOuse TARGARYEn, ThE FirsT OF HER naMe, QUeEn OF The ANdAlS And THe FirsT mEN, PROtECtOr Of tHE SEven KinGDOmS, The MoTHeR of DrAGONS, thE KhALeEsi oF THE GReAt gRAss sEa, The UnburNT, The BReakEr of cHAInS.")).toBe("Daenerys Stormborn of House Targaryen, the First of Her Name, Queen of the Andals and the First Men, Protector of the Seven Kingdoms, the Mother of Dragons, the Khaleesi of the Great Grass Sea, the Unburnt, the Breaker of Chains.");
     });
 })
+
+// Is it an Object?
+describe("isObject", function() {
+    it("should be a defined function", function() {
+        expect(typeof isObject).toBe("function");
+    });
+    it("should return a boolean value when executed", function() {
+        expect(typeof isObject("")).toBe("boolean");
+    });
+    it("should return true when passed new Date()", function() {
+        expect(isObject(new Date())).toBe(true);
+    });
+    it("should return false when passed '12/12/2011'", function() {
+        expect(isObject("12/12/2011")).toBe(false);
+    });
+    it("should return false when passed null", function() {
+        expect(isObject(null)).toBe(false);
+    });
+    it("should return true when passed [1, 2, 3]", function() {
+        expect(isObject([1, 2, 3])).toBe(true);
+    });
+    it("should return true when passed {}", function() {
+        expect(isObject({})).toBe(true);
+    });
+})
