@@ -11,10 +11,11 @@ sclass : "VI",
 rollno : 12 };
  */
 
-var student = {};
-student.name = "David Rayy";
-student.sclass = "VI";
-student.rollno = 12;
+var student = {
+    name: "David Rayy",
+    sclass: "VI",
+    rollno: 12
+};
 
 console.log(student);
 
