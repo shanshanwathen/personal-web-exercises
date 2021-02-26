@@ -850,10 +850,97 @@ If there are multiple Nemo's in the sentence, only return for the first one.
 
 function findNemo(sentence) {
     var words = sentence.split(" ");
-    console.log(words);
     if (words. includes("Nemo")) {
         return "I found Nemo at " + (words.indexOf("Nemo") + 1) + "!";
     } else {
         return "I can't find Nemo :(";
     }
 }
+
+
+/*
+Return the Middle Character(s) of a String
+
+Create a function that takes a string and returns the middle character(s). If the word's length is odd, return the middle character. If the word's length is even, return the middle two characters.
+
+Examples
+getMiddle("test") ➞ "es"
+getMiddle("testing") ➞ "t"
+getMiddle("middle") ➞ "dd"
+getMiddle("A") ➞ "A"
+ */
+
+// function getMiddle(string) {
+//     if (string.length % 2 === 0) {
+//         return string.slice(string.length / 2 - 1, string.length / 2 +  1);
+//     } else {
+//         return string.charAt(Math.floor(string.length / 2));
+//     }
+// }
+
+function getMiddle(string) {
+    return (string.length % 2 === 0) ? string.substr(string.length / 2 - 1, 2) : string.charAt(Math.floor(string.length / 2));
+}
+
+
+/*
+Reverse the Odd Length Words
+
+Given a string, reverse all the words which have odd length. The even length words are not changed.
+
+Examples
+reverseOdd("Bananas") ➞ "sananaB"
+reverseOdd("One two three four") ➞ "enO owt eerht four"
+reverseOdd("Make sure uoy only esrever sdrow of ddo length")
+➞ "Make sure you only reverse words of odd length"
+
+Notes
+There is exactly one space between each word and no punctuation is used.
+ */
+
+// function reverseOdd(string) {
+//     var words = string.split(" ");
+//     for (var i = 0; i < words.length; i++) {
+//         if (words[i].length % 2 === 1) {
+//             words[i] = words[i].split("").reverse().join("");
+//         }
+//     }
+//     return words.join(" ");
+// }
+
+
+function reverseOdd(string) {
+    var words = string.split(" ");
+    var array = [];
+    words.forEach(function(word) {
+        if (word.length % 2 === 1) {
+            word = word.split("").reverse().join("");
+        }
+        array.push(word);
+        return array;
+    });
+    return array.join(" ");
+}
+
+
+/*
+Game of Thrones: Character Titles
+
+Write a function that takes a string and returns a string with the correct case for character titles in the Game of Thrones series.
+
+The words and, the, of and in should be lowercase.
+All other words should have the first character as uppercase and the rest lowercase.
+Examples
+correctTitle("jOn SnoW, kINg IN thE noRth.")
+➞ "Jon Snow, King in the North."
+correctTitle("sansa stark, lady of winterfell.")
+➞ "Sansa Stark, Lady of Winterfell."
+correctTitle("TYRION LANNISTER, HAND OF THE QUEEN.")
+➞ "Tyrion Lannister, Hand of the Queen."
+
+Notes
+Punctuation and spaces must remain in their original positions.
+Hyphenated words are considered separate words.
+Be careful with words that contain and, the, of or in.
+See the Resources tab for more info on the various JavaScript string methods.
+ */

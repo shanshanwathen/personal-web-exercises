@@ -1009,3 +1009,73 @@ describe("findNemo", function() {
         expect(findNemo("Nemo is a clown fish, he has white and orange stripes. Nemo , come back!")).toBe("I found Nemo at 1!");
     });
 })
+
+
+// Return the Middle Character(s) of a String
+describe("getMiddle", function() {
+    it("should be a defined function", function() {
+        expect(typeof getMiddle).toBe("function");
+    });
+    it("should return a string when executed", function() {
+        expect(typeof getMiddle("")).toBe("string");
+    });
+    it("should return 'es' when passed in 'test'", function() {
+        expect(getMiddle("test")).toBe("es");
+    });
+    it("should return 't' when passed in 'testing'", function() {
+        expect(getMiddle("testing")).toBe("t");
+    });
+    it("should return 'dd' when passed in 'middle'", function() {
+        expect(getMiddle("middle")).toBe("dd");
+    });
+    it("should return 'A' when passed in 'A'", function() {
+        expect(getMiddle("A")).toBe("A");
+    });
+    it("should return 'bi' when passed in 'inhabitant'", function() {
+        expect(getMiddle("inhabitant")).toBe("bi");
+    });
+    it("should return 'o' when passed in 'brown'", function() {
+        expect(getMiddle("brown")).toBe("o");
+    });
+    it("should return 'aw' when passed in 'pawn'", function() {
+        expect(getMiddle("pawn")).toBe("aw");
+    });
+    it("should return 'i' when passed in 'cabinet'", function() {
+        expect(getMiddle("cabinet")).toBe("i");
+    });
+    it("should return 'e' when passed in 'fresh'", function() {
+        expect(getMiddle("fresh")).toBe("e");
+    });
+    it("should return 'or' when passed in 'shorts'", function() {
+        expect(getMiddle("shorts")).toBe("or");
+    });
+})
+
+
+// Reverse the Odd Length Words
+describe("reverseOdd", function() {
+    it("should be a defined function", function() {
+        expect(typeof reverseOdd).toBe("function");
+    });
+    it("should return a string when executed", function() {
+        expect(typeof reverseOdd("")).toBe("string");
+    });
+    it("should return '' when passed in an empty string", function() {
+        expect(reverseOdd("")).toBe("");
+    });
+    it("should return 'enO owt eerht four' when passed in 'One two three four'", function() {
+        expect(reverseOdd("One two three four")).toBe("enO owt eerht four");
+    });
+    it("should return 'Make sure you only reverse words of odd length' when passed in 'Make sure uoy only esrever sdrow of ddo length'", function() {
+        expect(reverseOdd("Make sure uoy only esrever sdrow of ddo length")).toBe("Make sure you only reverse words of odd length")
+    });
+    it("should return 'sananaB' when passed in 'Bananas'", function() {
+        expect(reverseOdd("Bananas")).toBe("sananaB");
+    });
+    it("should return 'ddO ddo ddo ddo ddo ddo ddo ddo ddo ddo ddo' when passed in 'Odd odd odd odd odd odd odd odd odd odd odd'", function() {
+        expect(reverseOdd("Odd odd odd odd odd odd odd odd odd odd odd")).toBe("ddO ddo ddo ddo ddo ddo ddo ddo ddo ddo ddo");
+    });
+})
+
+
+// Game of Thrones: Character Titles
