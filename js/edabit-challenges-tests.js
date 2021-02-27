@@ -1154,3 +1154,33 @@ describe("isObject", function() {
         expect(isObject({})).toBe(true);
     });
 })
+
+
+// Learn Lodash: matchesProperty, Check if an Object Contains a Key Value Pair
+
+const cars = [
+    { make: "mazda", year: 2020, color: "red", isUsed: false },
+    { make: "mazda", year: 2018, color: "blue", isUsed: true },
+    { make: "toyota", year: 2018, color: "blue", isUsed: true },
+    { make: "toyota", year: 2017, color: "grey", isUsed: true },
+    { make: "ford", year: 2017, color: "grey", isUsed: true },
+    { make: "for", year: 2020, color: "red", isUsed: false },
+];
+
+describe("matchesProperty_myVersion", function() {
+    it("should be a defined function", function () {
+        expect(typeof matchesProperty_myVersion).toBe("function");
+    });
+    it("should return " + [cars[1], cars[2]] + " when passed in 'color' and 'blue'", function () {
+        expect(matchesProperty_myVersion("color", "blue")).toEqual([cars[1], cars[2]]);
+    });
+    it("should return " + [cars[1], cars[2], cars[3], cars[4]] + " when passed in 'isUsed' and true", function () {
+        expect(matchesProperty_myVersion("isUsed", true)).toEqual([cars[1], cars[2], cars[3], cars[4]]);
+    });
+    it("should return " + [cars[4]] + " when passed in 'make' and 'ford'", function () {
+        expect(matchesProperty_myVersion("make", "ford")).toEqual([cars[4]]);
+    });
+    it("should return " + [cars[3], cars[4]] + " when passed in 'year' and 2017", function () {
+        expect(matchesProperty_myVersion("year", 2017)).toEqual([cars[3], cars[4]]);
+    });
+})
