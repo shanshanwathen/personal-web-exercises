@@ -1184,3 +1184,22 @@ describe("matchesProperty_myVersion", function() {
         expect(matchesProperty_myVersion("year", 2017)).toEqual([cars[3], cars[4]]);
     });
 })
+
+// Fix the Error: Flattening an Array
+describe("flatten", function () {
+    it("should be a defined function", function () {
+        expect(typeof flatten).toBe("function");
+    });
+    it("should return an array when passed in an array", function () {
+        expect(Array.isArray(flatten([]))).toBe(true);
+    });
+    it("should return [1, 2, 3, 4] when passed in [[1, 2], [3, 4]]", function () {
+        expect(flatten([[1, 2], [3, 4]])).toEqual([1, 2, 3, 4]);
+    });
+    it("should return ['a', 'b', 'c', 'd'] when passed in [['a', 'b'], ['c', 'd']]", function () {
+        expect(flatten([['a', 'b'], ['c', 'd']])).toEqual(['a', 'b', 'c', 'd']);
+    });
+    it("should return [true, false, false, false] when passed in [[true, false], [false, false]]", function () {
+        expect(flatten([[true, false], [false, false]])).toEqual([true, false, false, false]);
+    });
+})
