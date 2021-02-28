@@ -133,5 +133,41 @@ library.sort(function(bookOne, bookTwo) {
 
 console.log(library);
 
+// Write a JavaScript function to retrieve all the names of object's own and inherited properties.
 
+function keysOfObject(object) {
+    return Object.keys(object);
+}
+
+console.log(keysOfObject(library[0]));
+
+// Write a JavaScript function to retrieve all the values of an object's properties.
+
+function valuesOfObject(object) {
+    return Object.values(object);
+}
+
+console.log(valuesOfObject(library[0]));
+
+// Write a JavaScript function to convert an object into a list of `[key, value]` pairs.
+
+function keyValue(object) {
+    return Object.entries(object);
+}
+
+console.log(keyValue(library[0]));
+
+//  Write a JavaScript function to get a copy of the object where the keys have become the values and the values the keys.
+
+function copyObject(object) {
+    var keys = Object.values(object);
+    var values = Object.keys(object);
+    var resultObject = {};
+    for (var i = 0; i < keys.length; i++) {
+        resultObject[keys[i]] = values[i];
+    }
+    return resultObject;
+}
+
+console.log(copyObject(library[0]));
 
