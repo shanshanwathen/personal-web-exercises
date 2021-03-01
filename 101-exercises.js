@@ -85,7 +85,7 @@ addToDone("Exercise 6 is correct")
 // Exercise 7
 // Given the array of numbers defined below, reverse the array of numbers that you created above. 
 var someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-someNumbers = someNumbers.reverse();
+someNumbers.reverse();
 assert(someNumbers, [10, 9, 8, 7, 6, 5, 4, 3, 2, 1], "Exercise 7")
 addToDone("Exercise 7 is correct")
 
@@ -110,8 +110,7 @@ addToDone("Exercise 9 is correct.")
 // Write the code necessary to produce a single array that holds all fruits then all vegetables in the order as they were sorted above.
 // Assign the result to a variable named fruitsAndVeggies. 
 // *hint* the search engine search here would be "how to combine two arrays in JavaScript", for example.
-var fruitsAndVeggies = [];
-fruitsAndVeggies = fruits.concat(vegetables);
+var fruitsAndVeggies = fruits.concat(vegetables);
 assert(fruitsAndVeggies, ['tomato', 'strawberry', 'mango', 'kiwi', 'guava', 'banana', 'broccoli', 'carrot', 'cauliflower', 'eggplant', 'tomato', 'zucchini'], "Exercise 10")
 addToDone("Exercise 10 is correct")
 
@@ -211,11 +210,7 @@ addToDone("Exercise 11 is correct.")
 // Is zero itself positive? What about infinity? What about negative infinity?
 // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comparison_Operators for guidance with JS comparison operators.
 function isPositive(number){
-  if(number > 0){
-    return true;
-  }else{
-    return false;
-  }
+  return number > 0;
 }
 assert(isPositive(0.25), true, "Exercise 12");
 assert(isPositive(0.00001), true, "Exercise 12");
@@ -233,11 +228,7 @@ addToDone("Exercise 12 is correct.")
 // Exercise 13
 // Write a function definition named isNegative that takes in a number and returns true or False if that number is negative.
 function isNegative(number){
-  if(!isPositive(number) === true){
-    return true;
-  }else{
-    return false;
-  }
+  return number < 0;
 }
 assert(isNegative(positiveOddNumber), false, "Exercise 13");
 assert(isNegative(positiveEvenNumber), false, "Exercise 13");
@@ -249,11 +240,7 @@ addToDone("Exercise 13 is correct.")
 // Exercise 14
 // Write a function definition named isOdd that takes in a number and returns true or false if that number is odd.
 function isOdd(number){
-  if(number % 2 === 1 || number % 2 === -1){
-    return true;
-  }else{
-    return false;
-  }
+  return number % 2 !== 0;
 }
 assert(isOdd(positiveOddNumber), true, "Exercise 14");
 assert(isOdd(positiveEvenNumber), false, "Exercise 14");
@@ -264,11 +251,7 @@ addToDone("Exercise 14 is correct.")
 // Exercise 15
 // Write a function definition named isEven that takes in a number and returns true or false if that number is even.
 function isEven(number){
-  if(!isOdd(number) === true){
-    return true;
-  }else{
-    return false;
-  }
+  return !isOdd(number);
 }
 assert(isEven(2), true, "Exercise 15");
 assert(isEven(positiveOddNumber), false, "Exercise 15");
