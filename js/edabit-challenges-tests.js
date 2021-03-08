@@ -1,5 +1,15 @@
 // Tests for edabit challenges
 
+const randomBoolean = Boolean(Math.round(Math.random()));
+const randomPositiveNumber = Math.ceil(Math.random() * 100);
+const randomNegativeNumber = Math.ceil(Math.random() * 100) * -1;
+const randomFloatingNumber = Number((Math.random() * (10.00 - 1.00 + 1.00) + 1.00).toFixed(2));
+const randomNegFloatingNumber = Number((-1 * Math.random() * (10.00 - 1.00 + 1.00) + 1.00).toFixed(2));
+const exampleObject = { "firstName": "Grace", "lastName": "Hopper"};
+const exampleArray = ['Grace Hopper', 'Ada Lovelace', 'Margaret Hamilton', 'Sandi Metz'];
+const exampleString = "Grace Hopper";
+const randomIndex = Math.floor(Math.random() * exampleArray.length);
+const randomString = exampleArray[randomIndex];
 
 // Triangular Number Sequence
 describe('triangle', function() {
@@ -163,17 +173,20 @@ describe("allTruthy", function() {
     it("should return true when passed [true, true, true]", function() {
         expect(allTruthy([true, true, true])).toBe(true);
     });
-    it("should return false when passed [false]", function() {
-        expect(allTruthy([false])).toBe(false);
-    });
     it("should return true when passed [true]", function() {
         expect(allTruthy([true])).toBe(true);
+    });
+    it("should return true when passed [Boolean, Number, Object, String]", function() {
+        expect(allTruthy([Boolean, Number, Object, String])).toBe(true);
+    });
+    it("should return true when passed [Infinity, 92347238467.219378, 'Hello World']", function() {
+        expect(allTruthy([Infinity, 92347238467.219378, 'Hello World'])).toBe(true);
     });
     it("should return false when passed [false, true, true, true, 20]", function() {
         expect(allTruthy([false, true, true, true, 20])).toBe(false);
     });
-    it("should return true when passed [Infinity, 92347238467.219378, 'Hello World']", function() {
-        expect(allTruthy([Infinity, 92347238467.219378, 'Hello World'])).toBe(true);
+    it("should return false when passed [false]", function() {
+        expect(allTruthy([false])).toBe(false);
     });
     it("should return false when passed [Infinity, 92347238467.219378, 'Hello World', 0]", function() {
         expect(allTruthy([Infinity, 92347238467.219378, 'Hello World', 0])).toBe(false);
@@ -189,9 +202,6 @@ describe("allTruthy", function() {
     });
     it("should return false when passed [true, 32, Number, [][1]]", function() {
         expect(allTruthy([true, 32, Number, [][1]])).toBe(false);
-    });
-    it("should return true when passed [Boolean, Number, Object, String]", function() {
-        expect(allTruthy([Boolean, Number, Object, String])).toBe(true);
     });
 })
 
@@ -260,14 +270,14 @@ describe("removeABC", function() {
     it("should return null when passed in empty string", function() {
         expect(removeABC("")).toBe(null);
     });
+    it("should return null when passed in \"hello world!\"", function() {
+        expect(removeABC("hello world!")).toBe(null);
+    });
     it("should return \"This is wesome\" when passed in \"This is awesome\"", function() {
         expect(removeABC("This is awesome")).toBe("This is wesome");
     });
     it("should return \"This might e  it hrd\" when passed in \"This might be a bit hard\"", function() {
         expect(removeABC("This might be a bit hard")).toBe("This might e  it hrd");
-    });
-    it("should return null when passed in \"hello world!\"", function() {
-        expect(removeABC("hello world!")).toBe(null);
     });
     it("should return \"oding is fun!\" when passed in \"coding is fun!\"", function() {
         expect(removeABC("coding is fun!")).toBe("oding is fun!");
@@ -286,6 +296,15 @@ describe("isSpecialArray", function() {
     it("should return true when passed [2, 7, 4, 9, 6, 1, 6, 3]", function() {
         expect(isSpecialArray([2, 7, 4, 9, 6, 1, 6, 3])).toBe(true);
     });
+    it("should return true when passed [2, 1, 2, 1]", function() {
+        expect(isSpecialArray([2, 1, 2, 1])).toBe(true);
+    });
+    it("should return true when passed [4, 5, 6, 7]", function() {
+        expect(isSpecialArray([4, 5, 6, 7])).toBe(true);
+    });
+    it("should return true when passed [4, 5, 6, 7, 0, 5]", function() {
+        expect(isSpecialArray([4, 5, 6, 7, 0, 5])).toBe(true);
+    });
     it("should return false when passed [2, 7, 9, 1, 6, 1, 6, 3]", function() {
         expect(isSpecialArray([2, 7, 9, 1, 6, 1, 6, 3])).toBe(false);
     });
@@ -297,15 +316,6 @@ describe("isSpecialArray", function() {
     });
     it("should return false when passed [2, 2, 2, 2]", function() {
         expect(isSpecialArray([2, 2, 2, 2])).toBe(false);
-    });
-    it("should return true when passed [2, 1, 2, 1]", function() {
-        expect(isSpecialArray([2, 1, 2, 1])).toBe(true);
-    });
-    it("should return true when passed [4, 5, 6, 7]", function() {
-        expect(isSpecialArray([4, 5, 6, 7])).toBe(true);
-    });
-    it("should return true when passed [4, 5, 6, 7, 0, 5]", function() {
-        expect(isSpecialArray([4, 5, 6, 7, 0, 5])).toBe(true);
     });
 })
 
@@ -371,6 +381,12 @@ describe("factorChain", function() {
     it("should return true when passed in [1, 1, 1, 1, 1, 1]", function() {
         expect(factorChain([1, 1, 1, 1, 1, 1])).toBe(true);
     });
+    it("should return true when passed in [10, 20, 40]", function() {
+        expect(factorChain([10, 20, 40])).toBe(true);
+    });
+    it("should return true when passed in [1, 1, 1, 1, 7, 49]", function() {
+        expect(factorChain([1, 1, 1, 1, 7, 49])).toBe(true);
+    });
     it("should return false when passed in [2, 4, 6, 7, 12]", function() {
         expect(factorChain([2, 4, 6, 7, 12])).toBe(false);
     });
@@ -379,12 +395,6 @@ describe("factorChain", function() {
     });
     it("should return false when passed in [10, 20, 30, 40]", function() {
         expect(factorChain([10, 20, 30, 40])).toBe(false);
-    });
-    it("should return true when passed in [10, 20, 40]", function() {
-        expect(factorChain([10, 20, 40])).toBe(true);
-    });
-    it("should return true when passed in [1, 1, 1, 1, 7, 49]", function() {
-        expect(factorChain([1, 1, 1, 1, 7, 49])).toBe(true);
     });
 })
 
@@ -1141,17 +1151,17 @@ describe("isObject", function() {
     it("should return true when passed new Date()", function() {
         expect(isObject(new Date())).toBe(true);
     });
-    it("should return false when passed '12/12/2011'", function() {
-        expect(isObject("12/12/2011")).toBe(false);
-    });
-    it("should return false when passed null", function() {
-        expect(isObject(null)).toBe(false);
-    });
     it("should return true when passed [1, 2, 3]", function() {
         expect(isObject([1, 2, 3])).toBe(true);
     });
     it("should return true when passed {}", function() {
         expect(isObject({})).toBe(true);
+    });
+    it("should return false when passed '12/12/2011'", function() {
+        expect(isObject("12/12/2011")).toBe(false);
+    });
+    it("should return false when passed null", function() {
+        expect(isObject(null)).toBe(false);
     });
 })
 
@@ -1201,5 +1211,30 @@ describe("flatten", function () {
     });
     it("should return [true, false, false, false] when passed in [[true, false], [false, false]]", function () {
         expect(flatten([[true, false], [false, false]])).toEqual([true, false, false, false]);
+    });
+})
+
+// Seven Boom!
+describe("sevenBoom", function () {
+    it("should be a defined function", function () {
+        expect(typeof sevenBoom).toBe("function");
+    });
+    it("should return a string when passed in an array", function () {
+        expect(typeof sevenBoom(exampleArray)).toBe("string");
+    });
+    it("should return 'Boom!' when passed in [2, 6, 7, 9, 3]", function () {
+        expect(sevenBoom([2, 6, 7, 9, 3])).toBe("Boom!");
+    });
+    it("should return 'Boom!' when passed in [76, 55, 44, 32]", function () {
+        expect(sevenBoom([76, 55, 44, 32])).toBe("Boom!");
+    });
+    it("should return 'Boom!' when passed in [35, 4, 9, 37]", function () {
+        expect(sevenBoom([35, 4, 9, 37])).toBe("Boom!");
+    });
+    it("should return 'there is no 7 in the array' when passed in [33, 68, 400, 5]", function () {
+        expect(sevenBoom([33, 68, 400, 5])).toBe("there is no 7 in the array");
+    });
+    it("should return 'there is no 7 in the array' when passed in [86, 48, 100, 66]", function () {
+        expect(sevenBoom([86, 48, 100, 66])).toBe("there is no 7 in the array");
     });
 })
