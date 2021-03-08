@@ -1269,3 +1269,23 @@ describe("towerHanoi", function () {
         expect(towerHanoi(0)).toBe(0);
     });
 })
+
+// How Many Days Between Two Dates
+describe("getDays", function () {
+    it("should be a defined function", function () {
+        expect(typeof getDays).toBe("function");
+    });
+    it("should return a number when passed in dates", function () {
+        expect(typeof getDays(new Date(), new Date())).toBe("number");
+    });
+    it("should return 6 when passed in 'June 14, 2019' and 'June 20, 2019'", function () {
+        expect(getDays(new Date('June 14, 2019'), new Date('June 20, 2019'))).toBe(6);
+    });
+    it("should return 3 when passed in 'December 29, 2018' and 'January 1, 2019'", function () {
+        expect(getDays(new Date('December 29, 2018'), new Date('January 1, 2019'))).toBe(3);
+    });
+    it("should return 10 when passed in 'July 20, 2019' and 'July 30, 2019'", function () {
+        expect(getDays(new Date('July 20, 2019'), new Date('July 30, 2019'))).toBe(10);
+    });
+})
+
