@@ -1238,3 +1238,34 @@ describe("sevenBoom", function () {
         expect(sevenBoom([86, 48, 100, 66])).toBe("there is no 7 in the array");
     });
 })
+
+// Tower of Hanoi
+describe("towerHanoi", function () {
+    it("should be a defined function", function () {
+        expect(typeof towerHanoi).toBe("function");
+    });
+    it("should return a number when passed in a positive whole number", function () {
+        expect(typeof towerHanoi(randomPositiveNumber)).toBe("number");
+    });
+    it("should return 7 when passed in 3", function () {
+        expect(towerHanoi(3)).toBe(7);
+    });
+    it("should return 31 when passed in 5", function () {
+        expect(towerHanoi(5)).toBe(31);
+    });
+    it("should return 255 when passed in 8", function () {
+        expect(towerHanoi(8)).toBe(255);
+    });
+    it("should return 524287 when passed in 19", function () {
+        expect(towerHanoi(19)).toBe(524287);
+    });
+    it("should return 511 when passed in 9", function () {
+        expect(towerHanoi(9)).toBe(511);
+    });
+    it("should return 8191 when passed in 13", function () {
+        expect(towerHanoi(13)).toBe(8191);
+    });
+    it("should return 0 when passed in 0", function () {
+        expect(towerHanoi(0)).toBe(0);
+    });
+})
