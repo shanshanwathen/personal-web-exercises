@@ -1332,3 +1332,31 @@ describe("getLength", function () {
     });
 })
 
+// Check If the Brick Fits through the Hole
+describe("doesBrickFit", function () {
+    it("should be a defined function", function () {
+        expect(typeof doesBrickFit).toBe("function");
+    });
+    it("should return a boolean value when passed in positive whole numbers", function () {
+        expect(typeof doesBrickFit(randomPositiveNumber, randomPositiveNumber, randomPositiveNumber, randomPositiveNumber, randomPositiveNumber)).toBe("boolean");
+    });
+    it("should return true when passed in 1, 1, 1, 1, 1", function () {
+        expect(doesBrickFit(1, 1, 1, 1, 1)).toBe(true);
+    });
+    it("should return true when passed in 1, 2, 1, 1, 1", function () {
+        expect(doesBrickFit(1, 2, 1, 1, 1)).toBe(true);
+    });
+    it("should return true when passed in 1, 2, 2, 1, 2", function () {
+        expect(doesBrickFit(1, 2, 2, 1, 2)).toBe(true);
+    });
+    it("should return true when passed in 1, 2, 2, 2, 1", function () {
+        expect(doesBrickFit(1, 2, 2, 2, 1)).toBe(true);
+    });
+    it("should return false when passed in 1, 2, 2, 1, 1", function () {
+        expect(doesBrickFit(1, 2, 2, 1, 1)).toBe(false);
+    });
+    it("should return false when passed in 2, 2, 2, 1, 2", function () {
+        expect(doesBrickFit(2, 2, 2, 1, 2)).toBe(false);
+    });
+})
+
