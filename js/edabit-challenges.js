@@ -1137,51 +1137,5 @@ getDays(
  */
 
 function getDays(date1, date2) {
-    const months = [
-        {Jan: 1},
-        {Feb: 2},
-        {Mar: 3},
-        {Apr: 4},
-        {May: 5},
-        {Jun: 6},
-        {Jul: 7},
-        {Aug: 8},
-        {Sep: 9},
-        {Oct: 10},
-        {Nov: 11},
-        {Dec: 12}
-        ];
-    const days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    const specialDays = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    function convertMonthToNum(month) {
-        for (var i = 0; i < months.length; i++) {
-            if (month === Object.keys(months[i])[0]) {
-                return Object.values(months[i])[0];
-            }
-                }
-    }
-
-    function countDays(month, year) {
-        var day = 0;
-        for (var i = 0; i < month; i++) {
-            if (year % 4 === 0) {
-                day = day + specialDays[i];
-            } else {
-                day = day + days[i];
-            }
-        }
-        return day;
-    }
-    var date1Arr = date1.split(" "), date2Arr = date2.split(" "), result;
-    var month1 = convertMonthToNum(date1Arr[1]);
-    var month2 = convertMonthToNum(date2Arr[1]);
-    if (date1Arr[3] === date2Arr[3] && month1 === month2) { // when the dates are in the same year and same month
-        result = Math.abs(date1Arr[2] - date2Arr[2]);
-    } else if (date1Arr[3] === date2Arr[3] && month1 !== month2) { // when the dates are in the same year but different month and there are 28 days in February in that year, get the days in the year for each date and then do subtraction
-        var day1 = countDays(month1, date1Arr[3]) + date1Arr[2], day2 = countDays(month2, date2Arr[3]) + date2Arr[2];
-        result = Math.abs(day2 - day1);
-    } else { // when the dats are in different years
-        day1 =
-    }
-        return result;
+    return Math.round(Math.abs(date2.getTime() - date1.getTime()) / (1000 * 3600 * 24));
 }

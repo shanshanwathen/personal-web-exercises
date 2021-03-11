@@ -1287,5 +1287,11 @@ describe("getDays", function () {
     it("should return 10 when passed in 'July 20, 2019' and 'July 30, 2019'", function () {
         expect(getDays(new Date('July 20, 2019'), new Date('July 30, 2019'))).toBe(10);
     });
+    it("should return 36 when passed in 'March 18, 2021' and 'February 10, 2021'", function () {
+        expect(getDays(new Date('March 18, 2021'), new Date('February 10, 2021'))).toBe(36);
+    });
+    it("should return 402 when passed in 'March 18, 2021' and 'February 10, 2020'", function () {
+        expect(getDays(new Date('March 18, 2021'), new Date('February 10, 2020'))).toBe(402);
+    });
 })
 
