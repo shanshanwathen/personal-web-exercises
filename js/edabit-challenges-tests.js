@@ -1295,3 +1295,40 @@ describe("getDays", function () {
     });
 })
 
+// Length of a Nested Array
+describe("getLength", function () {
+    it("should be a defined function", function () {
+        expect(typeof getLength).toBe("function");
+    });
+    it("should return a number when passed in an array", function () {
+        expect(typeof getLength(exampleArray)).toBe("number");
+    });
+    it("should return 0 when passed in an empty array", function () {
+        expect(getLength([])).toBe(0);
+    });
+    it("should return 3 when passed in [1, [2,3]]", function () {
+        expect(getLength([1, [2,3]])).toBe(3);
+    });
+    it("should return 4 when passed in [1, [2, [3, 4]]]", function () {
+        expect(getLength([1, [2, [3, 4]]])).toBe(4);
+    });
+    it("should return 6 when passed in [1, [2, [3, [4, [5, 6]]]]]", function () {
+        expect(getLength([1, [2, [3, [4, [5, 6]]]]])).toBe(6);
+    });
+    it("should return 3 when passed in [1, 7, 8]", function () {
+        expect(getLength([1, 7, 8])).toBe(3);
+    });
+    it("should return 1 when passed in [2]", function () {
+        expect(getLength([2])).toBe(1);
+    });
+    it("should return 4 when passed in [2, [3], 4, [7]]", function () {
+        expect(getLength([2, [3], 4, [7]])).toBe(4);
+    });
+    it("should return 6 when passed in [2, [3, [5, 7]], 4, [7]]", function () {
+        expect(getLength([2, [3, [5, 7]], 4, [7]])).toBe(6);
+    });
+    it("should return 5 when passed in [2, [3, [4, [5]]], [9]]", function () {
+        expect(getLength([2, [3, [4, [5]]], [9]])).toBe(5);
+    });
+})
+
