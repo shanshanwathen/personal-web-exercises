@@ -1042,10 +1042,7 @@ function matchesProperty_myVersionx(key, value) {
     var array = [];
     for (var i = 0; i < cars.length; i++) {
         for (var j = 0; j < Object.keys(cars[i]).length; j++) {
-            console.log(Object.keys(cars[i]));
-            console.log(Object.values(cars[i]));
             if (Object.keys(cars[i])[j] === key && Object.values(cars[i])[j] === value) {
-                console.log(Object.keys(cars[i])[j], Object.values(cars[i])[j]);
                 array.push(cars[i]);
             }
         }
@@ -1217,14 +1214,13 @@ pentagonal(8) ➞ 141
 
 function pentagonal(number) {
     var result = 1;
-    if (!NaN(parseInt(number)) === false && parseInt(number) !== 0) {
-        for (var i = 0; i < number; i++) {
-            result = result + 5 * i;
-        }
-        return result;
+    if (isNaN(parseInt(number))) {
+        return false;
     } else if (number == 0) {
         return 0;
-    } else {
-        return false;
     }
+    for (var i = 0; i < number; i++) {
+        result = result + 5 * i;
+    }
+    return result;
 }
