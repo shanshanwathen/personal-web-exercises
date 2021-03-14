@@ -1395,3 +1395,25 @@ describe("pentagonal", function () {
     it("should return 16 when passed in ")
 })
 
+// The Frugal Gentleman
+describe("chosenWine", function () {
+    it("should be a defined function", function () {
+        expect(typeof chosenWine).toBe("function");
+    });
+    it("should return null when passed in an empty array", function () {
+        expect(chosenWine([])).toEqual(null);
+    });
+    it("should return 'Wine 9' when passed in [{name: \"Wine A\", price: 8.99}, {name: \"Wine 32\", price: 13.99}, {name: \"Wine 9\", price: 10.99}]", function () {
+        expect(chosenWine([{name: "Wine A", price: 8.99}, {name: "Wine 32", price: 13.99}, {name: "Wine 9", price: 10.99}])).toBe("Wine 9");
+    });
+    it("should return 'Wine B' when passed in [{name: \"Wine A\", price: 8.99}, {name: \"Wine B\", price: 9.99}]", function () {
+        expect(chosenWine([{name: "Wine A", price: 8.99}, {name: "Wine B", price: 9.99}])).toBe("Wine B");
+    });
+    it("should return 'Wine A' when passed in [{name: \"Wine A\", price: 8.99}]", function () {
+        expect(chosenWine([{name: "Wine A", price: 8.99}])).toBe("Wine A");
+    });
+    it("should return 'Wine 72' when passed in [{name: \"Wine A\", price: 8.99}, {name: \"Wine 389\", price: 109.99}, {name: \"Wine 44\", price: 38.44}, {name: \"Wine 72\", price: 22.77}]", function () {
+        expect(chosenWine([{name: "Wine A", price: 8.99}, {name: "Wine 389", price: 109.99}, {name: "Wine 44", price: 38.44}, {name: "Wine 72", price: 22.77}])).toBe("Wine 72");
+    });
+})
+
