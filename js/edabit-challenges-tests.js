@@ -1182,16 +1182,16 @@ describe("matchesProperty_myVersion", function() {
         expect(typeof matchesProperty_myVersion).toBe("function");
     });
     it("should return " + [cars[1], cars[2]] + " when passed in 'color' and 'blue'", function () {
-        expect(matchesProperty_myVersion("color", "blue")).toEqual([cars[1], cars[2]]);
+        expect(cars.filter(matchesProperty_myVersion("color", "blue"))).toEqual([cars[1], cars[2]]);
     });
     it("should return " + [cars[1], cars[2], cars[3], cars[4]] + " when passed in 'isUsed' and true", function () {
-        expect(matchesProperty_myVersion("isUsed", true)).toEqual([cars[1], cars[2], cars[3], cars[4]]);
+        expect(cars.filter(matchesProperty_myVersion("isUsed", true))).toEqual([cars[1], cars[2], cars[3], cars[4]]);
     });
     it("should return " + [cars[4]] + " when passed in 'make' and 'ford'", function () {
-        expect(matchesProperty_myVersion("make", "ford")).toEqual([cars[4]]);
+        expect(cars.filter(matchesProperty_myVersion("make", "ford"))).toEqual([cars[4]]);
     });
     it("should return " + [cars[3], cars[4]] + " when passed in 'year' and 2017", function () {
-        expect(matchesProperty_myVersion("year", 2017)).toEqual([cars[3], cars[4]]);
+        expect(cars.filter(matchesProperty_myVersion("year", 2017))).toEqual([cars[3], cars[4]]);
     });
 })
 
@@ -1358,5 +1358,40 @@ describe("doesBrickFit", function () {
     it("should return false when passed in 2, 2, 2, 1, 2", function () {
         expect(doesBrickFit(2, 2, 2, 1, 2)).toBe(false);
     });
+})
+
+// Pentagonal Number
+describe("pentagonal", function () {
+    it("should be a defined function", function () {
+        expect(typeof pentagonal).toBe("function");
+    });
+    it("should return false when passed in NaN", function () {
+        expect(pentagonal(NaN)).toBe(false);
+    });
+    it("should return false when passed in null", function () {
+        expect(pentagonal(null)).toBe(false);
+    });
+    it("should return false when passed in a boolean value", function () {
+        expect(pentagonal(randomBoolean)).toBe(false);
+    });
+    it("should return false when passed in Infinity", function () {
+        expect(pentagonal(Infinity)).toBe(false);
+    });
+    it("should return false when nothing is passed in", function () {
+        expect(pentagonal()).toBe(false);
+    });
+    it("should return a number when passed in a positive whole number", function () {
+        expect(typeof pentagonal(randomPositiveNumber)).toBe("number");
+    });
+    it("should return 0 when passed in 0", function () {
+        expect(pentagonal(0)).toBe(0);
+    });
+    it("should return 0 when passed in '0'", function () {
+        expect(pentagonal("0")).toBe(0);
+    });
+    it("should return 1 when passed in 1", function () {
+        expect(pentagonal(1)).toBe(1);
+    });
+    it("should return 16 when passed in ")
 })
 

@@ -1028,10 +1028,24 @@ This entire series of challenges can be found here.
  */
 
 function matchesProperty_myVersion(key, value) {
+    return function(input) {
+        for (var i = 0; i < Object.keys(input).length; i++) {
+            if(Object.keys(input)[i] === key && Object.values(input)[i] === value) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+function matchesProperty_myVersionx(key, value) {
     var array = [];
     for (var i = 0; i < cars.length; i++) {
-        for (var j = 0; j < Object.keys(cars[i]).length ; j++) {
-            if (Object.keys(cars[i])[0] === key && Object.values(cars[i])[0] === value) {
+        for (var j = 0; j < Object.keys(cars[i]).length; j++) {
+            console.log(Object.keys(cars[i]));
+            console.log(Object.values(cars[i]));
+            if (Object.keys(cars[i])[j] === key && Object.values(cars[i])[j] === value) {
+                console.log(Object.keys(cars[i])[j], Object.values(cars[i])[j]);
                 array.push(cars[i]);
             }
         }
@@ -1185,4 +1199,32 @@ You can't put a brick in at a non-orthogonal angle.
 
 function doesBrickFit(height,width,depth, holeWidth,holeHeight) {
     return (holeWidth >= height && (holeHeight >= width || holeHeight >= depth)) || (holeWidth >= width && (holeHeight >= height || holeHeight >= depth)) || (holeWidth >= depth && (holeHeight >= height || holeHeight >= width));
+}
+
+/*
+Pentagonal Number
+
+Write a function that takes a positive integer num and calculates how many dots exist in a pentagonal shape around the center dot on the Nth iteration. The first iteration is only a single dot. On the second, there are 6 dots. On the third, there are 16 dots, and on the fourth there are 31 dots.
+
+Return the number of dots that exist in the whole pentagon on the Nth iteration.
+
+Examples
+pentagonal(1) ➞ 1
+pentagonal(2) ➞ 6
+pentagonal(3) ➞ 16
+pentagonal(8) ➞ 141
+ */
+
+function pentagonal(number) {
+    var result = 1;
+    if (!NaN(parseInt(number)) === false && parseInt(number) !== 0) {
+        for (var i = 0; i < number; i++) {
+            result = result + 5 * i;
+        }
+        return result;
+    } else if (number == 0) {
+        return 0;
+    } else {
+        return false;
+    }
 }
