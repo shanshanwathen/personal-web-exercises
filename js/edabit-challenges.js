@@ -1253,10 +1253,10 @@ function chosenWine(wines) {
     }
     var wineNames = [], winePrices = [];
     for (var i = 0; i < wines.length; i++) {
-        wineNames.push(wines[i].name);
-        winePrices.push(wines[i].price);
+        wineNames.push(wines[i].name);       // create wineNames array to have all the wine names
+        winePrices.push(wines[i].price);     // create winePrices array to have all the wine price
     }
-    wineNames.splice(winePrices.indexOf(Math.min(...winePrices)), 1);
-    winePrices.splice(winePrices.indexOf(Math.min(...winePrices)), 1);
-    return wineNames[winePrices.indexOf(Math.min(...winePrices))];
+    wineNames.splice(winePrices.indexOf(Math.min(...winePrices)), 1);    // delete the lowest price wine in wineNames array
+    winePrices.splice(winePrices.indexOf(Math.min(...winePrices)), 1);   // delete the lowest price in winePrices array
+    return wineNames[winePrices.indexOf(Math.min(...winePrices))];   // get second lowest price wine name
 }

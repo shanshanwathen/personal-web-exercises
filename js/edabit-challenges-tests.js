@@ -1392,7 +1392,36 @@ describe("pentagonal", function () {
     it("should return 1 when passed in 1", function () {
         expect(pentagonal(1)).toBe(1);
     });
-    it("should return 16 when passed in ")
+    it("should return 16 when passed in 3", function () {
+        expect(pentagonal(3)).toBe(16);
+    });
+    it("should return 141 when passed in 8", function () {
+        expect(pentagonal(8)).toBe(141);
+    });
+    it("should return 226 when passed in 10", function () {
+        expect(pentagonal(10)).toBe(226);
+    });
+    it("should return 391 when passed in 13", function () {
+        expect(pentagonal(13)).toBe(391);
+    });
+    it("should return 526 when passed in 15", function () {
+        expect(pentagonal(15)).toBe(526);
+    });
+    it("should return 1051 when passed in 21", function () {
+        expect(pentagonal(21)).toBe(1051);
+    });
+    it("should return 2641 when passed in 33", function () {
+        expect(pentagonal(33)).toBe(2641);
+    });
+    it("should return 4516 when passed in 43", function () {
+        expect(pentagonal(43)).toBe(4516);
+    });
+    it("should return 6126 when passed in 50", function () {
+        expect(pentagonal(50)).toBe(6126);
+    });
+    it("should return 9456 when passed in 62", function () {
+        expect(pentagonal(62)).toBe(9456);
+    });
 })
 
 // The Frugal Gentleman
