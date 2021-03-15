@@ -1260,3 +1260,24 @@ function chosenWine(wines) {
     winePrices.splice(winePrices.indexOf(Math.min(...winePrices)), 1);   // delete the lowest price in winePrices array
     return wineNames[winePrices.indexOf(Math.min(...winePrices))];   // get second lowest price wine name
 }
+
+
+/*
+Star Ratings
+
+Given an array of five values, calculate the average star rating, rounded to two decimal places. The array contains user votes per star, so the first element [0] contains the number of 1-star ratings and the last element [4], the number of 5-star ratings. Return the average score in [brackets], followed by a space and asterisks' * to represent the star rating, rounded to the nearest whole star.
+
+Examples
+starRating([55, 67, 98, 115, 61]) ➞ "[3.15] ***"
+starRating([0, 2, 0, 1, 23]) ➞ "[4.73] *****"
+starRating([16, 17, 23, 40, 45]) ➞ "[3.57] ****"
+Notes
+Round stars to whole stars.
+ */
+
+function starRating(arr) {
+    var result, star = "*";
+    result = ((arr[0] * 1 + arr[1] * 2 + arr[2] * 3 + arr[3] * 4 + arr[4] * 5) / (arr[0] + arr[1] + arr[2] + arr[3] + arr[4])).toFixed(2);
+    star = star.repeat(Math.round(result));
+    return "[" + result + "] " + star;
+}

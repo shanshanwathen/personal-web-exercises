@@ -1446,3 +1446,37 @@ describe("chosenWine", function () {
     });
 })
 
+// Star Ratings
+describe("starRating", function () {
+    it("should be a defined function", function () {
+        expect(typeof starRating).toBe("function");
+    });
+    it("should return a string when passed in an array with 5 numbers", function () {
+        expect(typeof starRating([0, 0, 0, 0, 0])).toBe("string");
+    });
+    it("should return '[3.15] ***' when passed in [55, 67, 98, 115, 61]", function () {
+        expect(starRating([55, 67, 98, 115, 61])).toBe("[3.15] ***");
+    });
+    it("should return '[2.56] ***' when passed in [75, 79, 50, 55, 25]", function () {
+        expect(starRating([75, 79, 50, 55, 25])).toBe("[2.56] ***");
+    });
+    it("should return '[4.73] *****' when passed in [0, 2, 0, 1, 23]", function () {
+        expect(starRating([0, 2, 0, 1, 23])).toBe("[4.73] *****");
+    });
+    it("should return '[3.57] ****' when passed in [16, 17, 23, 40, 45]", function () {
+        expect(starRating([16, 17, 23, 40, 45])).toBe("[3.57] ****");
+    });
+    it("should return '[3.67] ****' when passed in [175, 790, 550, 1550, 1245]", function () {
+        expect(starRating([175, 790, 550, 1550, 1245])).toBe("[3.67] ****");
+    });
+    it("should return '[5.00] *****' when passed in [0, 0, 0, 0, 5]", function () {
+        expect(starRating([0, 0, 0, 0, 5])).toBe("[5.00] *****");
+    });
+    it("should return '[2.88] ***' when passed in [6713, 7809, 5350, 5005, 6250]", function () {
+        expect(starRating([6713, 7809, 5350, 5005, 6250])).toBe("[2.88] ***");
+    });
+    it("should return '[3.79] ****' when passed in [80, 79, 82, 155, 325]", function () {
+        expect(starRating([80, 79, 82, 155, 325])).toBe("[3.79] ****");
+    });
+})
+
