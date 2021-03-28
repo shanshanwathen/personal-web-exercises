@@ -1480,3 +1480,57 @@ describe("starRating", function () {
     });
 })
 
+// Calculate the Total Price of Groceries
+describe("getTotalPrice", function () {
+    it("should be a defined function", function () {
+        expect(typeof getTotalPrice).toBe("function");
+    });
+    it("should return 1.5 when passed in [\n" +
+        "\t{ product: \"Milk\", quantity: 1, price: 1.50 }\n" +
+        "]", function () {
+        expect(getTotalPrice([
+            { product: "Milk", quantity: 1, price: 1.50 }
+        ])).toBe(1.5);
+    });
+    it("should return 4 when passed in [\n" +
+        "\t{ product: \"Milk\", quantity: 1, price: 1.50 },\n" +
+        "\t{ product: \"Cereals\", quantity: 1, price: 2.50 }\n" +
+        "]", function () {
+        expect(getTotalPrice([
+            { product: "Milk", quantity: 1, price: 1.50 },
+            { product: "Cereals", quantity: 1, price: 2.50 }
+        ])).toBe(4);
+    });
+    it("should return 4.5 when passed in [\n" +
+        "\t{ product: \"Milk\", quantity: 3, price: 1.50 }\n" +
+        "]", function () {
+        expect(getTotalPrice([
+            { product: "Milk", quantity: 3, price: 1.50 }
+        ])).toBe(4.5);
+    });
+    it("should return 10.4 when passed in [\n" +
+        "\t{ product: \"Milk\", quantity: 1, price: 1.50 },\n" +
+        "\t{ product: \"Eggs\", quantity: 12, price: 0.10 },\n" +
+        "\t{ product: \"Bread\", quantity: 2, price: 1.60 },\n" +
+        "\t{ product: \"Cheese\", quantity: 1, price: 4.50 }\n" +
+        "]", function () {
+        expect(getTotalPrice([
+            { product: "Milk", quantity: 1, price: 1.50 },
+            { product: "Eggs", quantity: 12, price: 0.10 },
+            { product: "Bread", quantity: 2, price: 1.60 },
+            { product: "Cheese", quantity: 1, price: 4.50 }
+        ])).toBe(10.4);
+    });
+    it("should return 0.3 when passed in [\n" +
+        "\t{ product: \"Chocolate\", quantity: 1, price: 0.10 },\n" +
+        "\t{ product: \"Lollipop\", quantity: 1, price: 0.20 }\n" +
+        "]", function () {
+        expect(getTotalPrice([
+            { product: "Chocolate", quantity: 1, price: 0.10 },
+            { product: "Lollipop", quantity: 1, price: 0.20 }
+        ])).toBe(0.3);
+    });
+})
+
+
+
