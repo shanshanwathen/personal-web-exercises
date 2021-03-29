@@ -1532,5 +1532,29 @@ describe("getTotalPrice", function () {
     });
 })
 
+// Data Structures (1): Find Max of Sliding Window
+describe("windowMaxes", function () {
+    it("should be a defined function", function () {
+        expect(typeof windowMaxes).toBe("function");
+    });
+    it("should return an array when passed in an array of numbers and a number", function () {
+        expect(Array.isArray(windowMaxes([1, 2, 3, 4, 5], 2))).toBe(true);
+    });
+    it("should return [5, 6, 7, 8, 9] when passed in [4, 5, 6, 7, 8, 9] and 2", function () {
+        expect(windowMaxes([4, 5, 6, 7, 8, 9], 2)).toEqual([5, 6, 7, 8, 9]);
+    });
+    it("should return [4, 4, 4, 4, 3, 5] when passed in [1, 2, 3, 4, 3, 2, 1, 2, 5] and 4", function () {
+        expect(windowMaxes([1, 2, 3, 4, 3, 2, 1, 2, 5], 4)).toEqual([4, 4, 4, 4, 3, 5]);
+    });
+    it("should return [3, 4, 4, 4, 3, 2, 5] when passed in [1, 2, 3, 4, 3, 2, 1, 2, 5] and 3", function () {
+        expect(windowMaxes([1, 2, 3, 4, 3, 2, 1, 2, 5], 3)).toEqual([3, 4, 4, 4, 3, 2, 5]);
+    });
+    it("should return [4, 4, 4, 4, 5] when passed in [1, 2, 3, 4, 3, 2, 1, 2, 5] and 5", function () {
+        expect(windowMaxes([1, 2, 3, 4, 3, 2, 1, 2, 5], 5)).toEqual([4, 4, 4, 4, 5]);
+    });
+    it("should return [32, 32, 32, 43, 43, 75, 75, 75, 75] when passed in [1, 4, -2, -9, 5, 32, -89, 23, 43, 2, 75, 3, 12, -3] and 6", function () {
+        expect(windowMaxes([1, 4, -2, -9, 5, 32, -89, 23, 43, 2, 75, 3, 12, -3], 6)).toEqual([32, 32, 32, 43, 43, 75, 75, 75, 75]);
+    });
+})
 
 
