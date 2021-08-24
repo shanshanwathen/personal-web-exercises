@@ -1370,3 +1370,42 @@ function windowMaxes(array, windowLength) {
     }
     return result;
 }
+
+/*
+Product of Digits of Sum
+
+Create a function that takes numbers as arguments, adds them together, and returns the product of digits until the answer is only 1 digit long.
+
+Examples
+sumDigProd(16, 28) ➞ 6
+// 16 + 28 = 44
+// 4 * 4 =  16
+// 1 * 6 = 6
+
+sumDigProd(0) ➞ 0
+sumDigProd(1, 2, 3, 4, 5, 6) ➞ 2
+Notes
+The input of the function is at least one number.
+ */
+
+function sumDigProd(...numbers) {
+    var numbersArray = [...numbers], sum = 0, result = 1;
+    for (var i = 0; i < numbersArray.length; i++) {
+        sum = sum + numbersArray[i];
+    }
+    console.log(sum);
+    if (sum < 10 && sum>=0) {
+        return sum;
+    }
+    while (Math.floor(sum / 10) >= 0) {
+        result = result * (sum % 10 || 1);
+        sum = Math.floor(sum / 10);
+        while (sum === 0 && Math.floor(result / 10) >= 0) {
+            console.log(result);
+            sum = result;
+            result = result * (sum % 10 || 1);
+            sum = Math.floor(sum / 10);
+        }
+    }
+    return result;
+}

@@ -1557,4 +1557,59 @@ describe("windowMaxes", function () {
     });
 })
 
+// Product of Digits of Sum
+describe("sumDigProd", function () {
+    it("should be a defined function", function () {
+        expect(typeof sumDigProd).toBe("function");
+    });
+    it("should return a number when passed in at least a number", function () {
+        expect(typeof sumDigProd(randomPositiveNumber)).toBe("number");
+    });
+    it("should return 6 when passed in 8, 16, 89, 3", function () {
+        expect(sumDigProd(8, 16, 89, 3)).toBe(6);
+    });
+    it("should return 6 when passed in 16, 28", function () {
+        expect(sumDigProd(16, 28)).toBe(6);
+    });
+    it("should return 9 when passed in 9", function () {
+        expect(sumDigProd(9)).toBe(9);
+    });
+    it("should return 6 when passed in 26, 497, 62, 841", function () {
+        expect(sumDigProd(26, 497, 62, 841)).toBe(6);
+    });
+    it("should return 0 when passed in 0", function () {
+        expect(sumDigProd(0)).toBe(0);
+    });
+    it("should return 6 when passed in 17737, 98723, 2", function () {
+        expect(sumDigProd(17737, 98723, 2)).toBe(6);
+    });
+    it("should return 8 when passed in 123, -99", function () {
+        expect(sumDigProd(123, -99)).toBe(8);
+    });
+    it("should return 7 when passed in 8, 9", function () {
+        expect(sumDigProd(8, 9)).toBe(7);
+    });
+    it("should return 8 when passed in 167, 167, 167, 167, 167, 3", function () {
+        expect(sumDigProd(167, 167, 167, 167, 167, 3)).toBe(8);
+    });
+    it("should return 1 when passed in 111111111", function () {
+        expect(sumDigProd(111111111)).toBe(1);
+    });
+    it("should return 2 when passed in 98526, 54, 863, 156489, 45, 6156", function () {
+        expect(sumDigProd(98526, 54, 863, 156489, 45, 6156)).toBe(2);
+    });
+    it("should return 8 when passed in 999, 999",  function () {
+        expect(sumDigProd(999, 999)).toBe(8);
+    });
+    it("should return 2 when passed in 1, 2, 3, 4, 5, 6", function () {
+        expect(sumDigProd(1, 2, 3, 4, 5, 6)).toBe(2);
+    });
+    it("should return 2 when passed in 999, 2222", function () {
+        expect(sumDigProd(999, 2222)).toBe(2);
+    });
+    it("should return 6 when passed in 8618, -2", function () {
+        expect(sumDigProd(8618, -2)).toBe(6);
+    });
+})
+
 
